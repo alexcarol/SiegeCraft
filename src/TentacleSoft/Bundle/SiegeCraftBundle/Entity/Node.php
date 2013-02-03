@@ -5,12 +5,12 @@ namespace TentacleSoft\Bundle\SiegeCraftBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Player
+ * Node
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Player
+class Node
 {
     /**
      * @var integer
@@ -22,27 +22,29 @@ class Player
     private $id;
 
     /**
-     * @var string
+     * @var integer
      *
-     * @ORM\Column(name="name", type="string", length=255)
+     * @ORM\Column(name="posX", type="smallint")
      */
-    private $name;
+    private $posX;
 
     /**
+     * @var integer
      *
-     * @ORM\OneToOne(targetEntity="Fortress", inversedBy="player")
+     * @ORM\Column(name="posY", type="smallint")
+     */
+    private $posY;
+
+    /**
+     * @ORM\ManyToOne(targetEntity="Fortress", inversedBy="nodes")
      */
     private $fortress;
 
     /**
-     * @ORM\OneToMany(targetEntity="Resource", mappedBy="player")
-     */
-    private $resources;
-
-    /**
-     * @ORM\OneToMany(targetEntity="Unit", mappedBy="player")
+     * @ORM\OneToMany(targetEntity="Unit", mappedBy="node")
      */
     private $units;
+
 
     /**
      * Get id
@@ -55,33 +57,55 @@ class Player
     }
 
     /**
-     * Set name
+     * Set posX
      *
-     * @param string $name
-     * @return Player
+     * @param integer $posX
+     * @return Node
      */
-    public function setName($name)
+    public function setPosX($posX)
     {
-        $this->name = $name;
+        $this->posX = $posX;
     
         return $this;
     }
 
     /**
-     * Get name
+     * Get posX
      *
-     * @return string 
+     * @return integer 
      */
-    public function getName()
+    public function getPosX()
     {
-        return $this->name;
+        return $this->posX;
+    }
+
+    /**
+     * Set posY
+     *
+     * @param integer $posY
+     * @return Node
+     */
+    public function setPosY($posY)
+    {
+        $this->posY = $posY;
+    
+        return $this;
+    }
+
+    /**
+     * Get posY
+     *
+     * @return integer 
+     */
+    public function getPosY()
+    {
+        return $this->posY;
     }
     /**
      * Constructor
      */
     public function __construct()
     {
-        $this->resources = new \Doctrine\Common\Collections\ArrayCollection();
         $this->units = new \Doctrine\Common\Collections\ArrayCollection();
     }
     
@@ -89,7 +113,7 @@ class Player
      * Set fortress
      *
      * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress
-     * @return Player
+     * @return Node
      */
     public function setFortress(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress = null)
     {
@@ -109,43 +133,10 @@ class Player
     }
 
     /**
-     * Add resources
-     *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources
-     * @return Player
-     */
-    public function addResource(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources)
-    {
-        $this->resources[] = $resources;
-    
-        return $this;
-    }
-
-    /**
-     * Remove resources
-     *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources
-     */
-    public function removeResource(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources)
-    {
-        $this->resources->removeElement($resources);
-    }
-
-    /**
-     * Get resources
-     *
-     * @return \Doctrine\Common\Collections\Collection 
-     */
-    public function getResources()
-    {
-        return $this->resources;
-    }
-
-    /**
      * Add units
      *
      * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units
-     * @return Player
+     * @return Node
      */
     public function addUnit(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units)
     {

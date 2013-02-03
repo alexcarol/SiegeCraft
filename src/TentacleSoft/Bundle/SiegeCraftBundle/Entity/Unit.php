@@ -36,12 +36,12 @@ class Unit
     private $idle;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Node, inversedBy="units")
+     * @ORM\ManyToOne(targetEntity="Node", inversedBy="units")
      */
     private $node;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Player", mappedBy="units")
+     * @ORM\ManyToOne(targetEntity="Player", inversedBy="units")
      */
     private $player;
 
@@ -99,5 +99,51 @@ class Unit
     public function getIdle()
     {
         return $this->idle;
+    }
+
+    /**
+     * Set node
+     *
+     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node $node
+     * @return Unit
+     */
+    public function setNode(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node $node = null)
+    {
+        $this->node = $node;
+    
+        return $this;
+    }
+
+    /**
+     * Get node
+     *
+     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node 
+     */
+    public function getNode()
+    {
+        return $this->node;
+    }
+
+    /**
+     * Set player
+     *
+     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player $player
+     * @return Unit
+     */
+    public function setPlayer(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player $player = null)
+    {
+        $this->player = $player;
+    
+        return $this;
+    }
+
+    /**
+     * Get player
+     *
+     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player 
+     */
+    public function getPlayer()
+    {
+        return $this->player;
     }
 }
