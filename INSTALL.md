@@ -6,4 +6,5 @@
       so it should be ok)
     php app/console doctrine:database:create
     php app/console doctrine:schema:create
+4.php app/console server:run
 5.Enjoy :)
