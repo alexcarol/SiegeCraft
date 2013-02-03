@@ -46,10 +46,10 @@ class Zone
     /**
      * Add regions
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Region $regions
+     * @param Region $regions
      * @return Zone
      */
-    public function addRegion(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Region $regions)
+    public function addRegion(Region $regions)
     {
         $this->regions[] = $regions;
     
@@ -59,9 +59,9 @@ class Zone
     /**
      * Remove regions
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Region $regions
+     * @param Region $regions
      */
-    public function removeRegion(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Region $regions)
+    public function removeRegion(Region $regions)
     {
         $this->regions->removeElement($regions);
     }

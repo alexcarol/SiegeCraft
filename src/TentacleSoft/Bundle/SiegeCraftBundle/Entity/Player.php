@@ -88,10 +88,10 @@ class Player
     /**
      * Set fortress
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress
+     * @param Fortress $fortress
      * @return Player
      */
-    public function setFortress(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress = null)
+    public function setFortress(Fortress $fortress = null)
     {
         $this->fortress = $fortress;
     
@@ -101,7 +101,7 @@ class Player
     /**
      * Get fortress
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress 
+     * @return Fortress
      */
     public function getFortress()
     {
@@ -111,10 +111,10 @@ class Player
     /**
      * Add resources
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources
+     * @param Resource $resources
      * @return Player
      */
-    public function addResource(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources)
+    public function addResource(Resource $resources)
     {
         $this->resources[] = $resources;
     
@@ -124,9 +124,9 @@ class Player
     /**
      * Remove resources
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources
+     * @param Resource $resources
      */
-    public function removeResource(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Resource $resources)
+    public function removeResource(Resource $resources)
     {
         $this->resources->removeElement($resources);
     }
@@ -144,10 +144,10 @@ class Player
     /**
      * Add units
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units
+     * @param Unit $units
      * @return Player
      */
-    public function addUnit(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units)
+    public function addUnit(Unit $units)
     {
         $this->units[] = $units;
     
@@ -157,9 +157,9 @@ class Player
     /**
      * Remove units
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units
+     * @param Unit $units
      */
-    public function removeUnit(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units)
+    public function removeUnit(Unit $units)
     {
         $this->units->removeElement($units);
     }

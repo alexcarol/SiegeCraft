@@ -58,10 +58,10 @@ class Region
     /**
      * Set fortress
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress
+     * @param Fortress $fortress
      * @return Region
      */
-    public function setFortress(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress)
+    public function setFortress(Fortress $fortress)
     {
         $this->fortress = $fortress;
     
@@ -71,7 +71,7 @@ class Region
     /**
      * Get fortress
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress 
+     * @return Fortress
      */
     public function getFortress()
     {
@@ -81,10 +81,10 @@ class Region
     /**
      * Set zone
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Zone $zone
+     * @param Zone $zone
      * @return Region
      */
-    public function setZone(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Zone $zone = null)
+    public function setZone(Zone $zone = null)
     {
         $this->zone = $zone;
     
@@ -94,7 +94,7 @@ class Region
     /**
      * Get zone
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Zone 
+     * @return Zone
      */
     public function getZone()
     {

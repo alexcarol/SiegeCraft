@@ -33,9 +33,11 @@ class Building
      *
      * @ORM\Column(name="level", type="smallint")
      */
-    private $level;
+    private $level = 1;
 
     /**
+     * @var Fortress
+     *
      * @ORM\ManyToOne(targetEntity="Fortress")
      */
     private $fortress;

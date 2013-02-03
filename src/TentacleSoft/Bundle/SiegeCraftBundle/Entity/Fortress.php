@@ -40,20 +40,25 @@ class Fortress
      *
      * @ORM\Column(name="technologies", type="simple_array")
      */
-    private $technologies;
+    private $technologies = array();
 
 
     /**
+     * @var Building
+     *
      * @ORM\OneToMany(targetEntity="Building", mappedBy="fortress")
      */
     private $buildings;
 
     /**
+     * @var Node
+     *
      * @ORM\OneToMany(targetEntity="Node", mappedBy="fortress")
      */
     private $nodes;
 
     /**
+     * @var Player
      *
      * @ORM\OneToOne(targetEntity="Player", mappedBy="fortress")
      */
@@ -202,9 +207,9 @@ class Fortress
     /**
      * Remove nodes
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node $nodes
+     * @param Node $nodes
      */
-    public function removeNode(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node $nodes)
+    public function removeNode(Node $nodes)
     {
         $this->nodes->removeElement($nodes);
     }
@@ -222,10 +227,10 @@ class Fortress
     /**
      * Set player
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player $player
+     * @param Player $player
      * @return Fortress
      */
-    public function setPlayer(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player $player = null)
+    public function setPlayer(Player $player = null)
     {
         $this->player = $player;
     
@@ -235,7 +240,7 @@ class Fortress
     /**
      * Get player
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player 
+     * @return Player
      */
     public function getPlayer()
     {
@@ -245,10 +250,10 @@ class Fortress
     /**
      * Set region
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Region $region
+     * @param Region $region
      * @return Fortress
      */
-    public function setRegion(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Region $region = null)
+    public function setRegion(Region $region = null)
     {
         $this->region = $region;
     
@@ -258,7 +263,7 @@ class Fortress
     /**
      * Get region
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Region 
+     * @return Region
      */
     public function getRegion()
     {

@@ -45,7 +45,6 @@ class Node
      */
     private $units;
 
-
     /**
      * Get id
      *
@@ -112,10 +111,10 @@ class Node
     /**
      * Set fortress
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress
+     * @param Fortress $fortress
      * @return Node
      */
-    public function setFortress(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress $fortress = null)
+    public function setFortress(Fortress $fortress = null)
     {
         $this->fortress = $fortress;
     
@@ -125,7 +124,7 @@ class Node
     /**
      * Get fortress
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Fortress 
+     * @return Fortress
      */
     public function getFortress()
     {
@@ -135,10 +134,10 @@ class Node
     /**
      * Add units
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units
+     * @param Unit $units
      * @return Node
      */
-    public function addUnit(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units)
+    public function addUnit(Unit $units)
     {
         $this->units[] = $units;
     
@@ -148,9 +147,9 @@ class Node
     /**
      * Remove units
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units
+     * @param Unit $units
      */
-    public function removeUnit(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Unit $units)
+    public function removeUnit(Unit $units)
     {
         $this->units->removeElement($units);
     }

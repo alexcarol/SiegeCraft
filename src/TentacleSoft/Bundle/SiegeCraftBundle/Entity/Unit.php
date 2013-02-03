@@ -33,7 +33,7 @@ class Unit
      *
      * @ORM\Column(name="idle", type="boolean")
      */
-    private $idle;
+    private $idle = false;
 
     /**
      * @ORM\ManyToOne(targetEntity="Node", inversedBy="units")
@@ -104,10 +104,10 @@ class Unit
     /**
      * Set node
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node $node
+     * @param Node $node
      * @return Unit
      */
-    public function setNode(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node $node = null)
+    public function setNode(Node $node = null)
     {
         $this->node = $node;
     
@@ -117,7 +117,7 @@ class Unit
     /**
      * Get node
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Node 
+     * @return Node
      */
     public function getNode()
     {
@@ -127,10 +127,10 @@ class Unit
     /**
      * Set player
      *
-     * @param \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player $player
+     * @param Player $player
      * @return Unit
      */
-    public function setPlayer(\TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player $player = null)
+    public function setPlayer(Player $player = null)
     {
         $this->player = $player;
     
@@ -140,7 +140,7 @@ class Unit
     /**
      * Get player
      *
-     * @return \TentacleSoft\Bundle\SiegeCraftBundle\Entity\Player 
+     * @return Player
      */
     public function getPlayer()
     {
