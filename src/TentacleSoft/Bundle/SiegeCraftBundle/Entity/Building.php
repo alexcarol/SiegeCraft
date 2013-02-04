@@ -42,6 +42,8 @@ class Building
      */
     private $fortress;
 
+
+
     /**
      * Get id
      *
