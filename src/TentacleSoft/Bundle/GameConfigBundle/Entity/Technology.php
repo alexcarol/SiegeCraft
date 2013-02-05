@@ -1,6 +1,6 @@
 <?php
 
-namespace TentacleSoft\Bundle\SiegeCraftBundle\Entity\Config;
+namespace TentacleSoft\Bundle\GameConfigBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
