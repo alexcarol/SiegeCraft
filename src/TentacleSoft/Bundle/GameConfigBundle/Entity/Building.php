@@ -1,16 +1,16 @@
 <?php
 
-namespace TentacleSoft\Bundle\SiegeCraftBundle\Entity\Config;
+namespace TentacleSoft\Bundle\GameConfigBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Technology
+ * Building
  *
- * @ORM\Table("technology_config")
+ * @ORM\Table()
  * @ORM\Entity
  */
-class Technology
+class ConfigBuilding
 {
     /**
      * @var integer
@@ -42,6 +42,19 @@ class Technology
      */
     private $multiplier;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="Building", mappedBy="requiredBuildings")
+     */
+    private $isRequiredByBuildings;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="Building", inversedBy="isRequiredByBuildings")
+     * @ORM\JoinTable(name="requirements",
+     *      joinColumns={@ORM\JoinColumn(name="building_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="required_building_id", referencedColumnName="id")}
+     *      )
+     */
+    private $requiredBuildings;
 
     /**
      * Get id
@@ -57,7 +70,7 @@ class Technology
      * Set name
      *
      * @param string $name
-     * @return Technology
+     * @return Building
      */
     public function setName($name)
     {
@@ -80,7 +93,7 @@ class Technology
      * Set description
      *
      * @param string $description
-     * @return Technology
+     * @return Building
      */
     public function setDescription($description)
     {
@@ -103,7 +116,7 @@ class Technology
      * Set multiplier
      *
      * @param float $multiplier
-     * @return Technology
+     * @return Building
      */
     public function setMultiplier($multiplier)
     {

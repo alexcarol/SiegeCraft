@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * Unit
  *
- * @ORM\Table("unit_config")
+ * @ORM\Table()
  * @ORM\Entity
  */
 class Unit

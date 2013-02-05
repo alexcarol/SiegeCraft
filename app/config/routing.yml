@@ -1,3 +1,8 @@
+game_config:
+    resource: "@GameConfigBundle/Controller/"
+    type:     annotation
+    prefix:   /
+
 siege_craft:
     resource: "@SiegeCraftBundle/Controller/"
     type:     annotation
