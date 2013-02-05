@@ -43,12 +43,12 @@ class ConfigBuilding
     private $multiplier;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Building", mappedBy="requiredBuildings")
+     * @ORM\ManyToMany(targetEntity="ConfigBuilding", mappedBy="requiredBuildings")
      */
     private $isRequiredByBuildings;
 
     /**
-     * @ORM\ManyToMany(targetEntity="Building", inversedBy="isRequiredByBuildings")
+     * @ORM\ManyToMany(targetEntity="ConfigBuilding", inversedBy="isRequiredByBuildings")
      * @ORM\JoinTable(name="requirements",
      *      joinColumns={@ORM\JoinColumn(name="building_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="required_building_id", referencedColumnName="id")}
@@ -70,7 +70,7 @@ class ConfigBuilding
      * Set name
      *
      * @param string $name
-     * @return Building
+     * @return ConfigBuilding
      */
     public function setName($name)
     {
@@ -93,7 +93,7 @@ class ConfigBuilding
      * Set description
      *
      * @param string $description
-     * @return Building
+     * @return ConfigBuilding
      */
     public function setDescription($description)
     {
@@ -116,7 +116,7 @@ class ConfigBuilding
      * Set multiplier
      *
      * @param float $multiplier
-     * @return Building
+     * @return ConfigBuilding
      */
     public function setMultiplier($multiplier)
     {

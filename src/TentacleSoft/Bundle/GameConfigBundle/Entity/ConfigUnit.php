@@ -5,12 +5,12 @@ namespace TentacleSoft\Bundle\GameConfigBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Unit
+ * ConfigUnit
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Unit
+class ConfigUnit
 {
     /**
      * @var integer
@@ -78,7 +78,7 @@ class Unit
      * Set name
      *
      * @param string $name
-     * @return Unit
+     * @return ConfigUnit
      */
     public function setName($name)
     {
@@ -101,7 +101,7 @@ class Unit
      * Set description
      *
      * @param string $description
-     * @return Unit
+     * @return ConfigUnit
      */
     public function setDescription($description)
     {
@@ -124,7 +124,7 @@ class Unit
      * Set baseAttack
      *
      * @param integer $baseAttack
-     * @return Unit
+     * @return ConfigUnit
      */
     public function setBaseAttack($baseAttack)
     {
@@ -147,7 +147,7 @@ class Unit
      * Set baseDefense
      *
      * @param integer $baseDefense
-     * @return Unit
+     * @return ConfigUnit
      */
     public function setBaseDefense($baseDefense)
     {
@@ -170,7 +170,7 @@ class Unit
      * Set baseHealth
      *
      * @param integer $baseHealth
-     * @return Unit
+     * @return ConfigUnit
      */
     public function setBaseHealth($baseHealth)
     {
@@ -193,7 +193,7 @@ class Unit
      * Set productionTime
      *
      * @param \DateTime $productionTime
-     * @return Unit
+     * @return ConfigUnit
      */
     public function setProductionTime($productionTime)
     {

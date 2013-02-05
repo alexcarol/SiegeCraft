@@ -5,12 +5,12 @@ namespace TentacleSoft\Bundle\GameConfigBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Technology
+ * ConfigTechnology
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Technology
+class ConfigTechnology
 {
     /**
      * @var integer
@@ -57,7 +57,7 @@ class Technology
      * Set name
      *
      * @param string $name
-     * @return Technology
+     * @return ConfigTechnology
      */
     public function setName($name)
     {
@@ -80,7 +80,7 @@ class Technology
      * Set description
      *
      * @param string $description
-     * @return Technology
+     * @return ConfigTechnology
      */
     public function setDescription($description)
     {
@@ -103,7 +103,7 @@ class Technology
      * Set multiplier
      *
      * @param float $multiplier
-     * @return Technology
+     * @return ConfigTechnology
      */
     public function setMultiplier($multiplier)
     {
