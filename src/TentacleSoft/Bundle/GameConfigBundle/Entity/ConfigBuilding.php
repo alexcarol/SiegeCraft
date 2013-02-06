@@ -43,6 +43,11 @@ class ConfigBuilding
     private $multiplier;
 
     /**
+     * @ORM\Column(name="costs", type="array")
+     */
+    private $costs;
+
+    /**
      * @ORM\ManyToMany(targetEntity="ConfigBuilding", mappedBy="requiredBuildings")
      */
     private $isRequiredByBuildings;
@@ -57,7 +62,7 @@ class ConfigBuilding
     private $requiredBuildings;
 
     /**
-     * @ORM\ManyToMany(targetEntity="ConfigTechnology", inversedBy="isRequiredByBuildings")
+     * @ORM\ManyToMany(targetEntity="ConfigTechnology", mappedBy="isRequiredByBuildings")
      * @ORM\JoinTable(name="building_technology_requirements",
      *      joinColumns={@ORM\JoinColumn(name="building_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")}
@@ -70,10 +75,6 @@ class ConfigBuilding
      */
     private $units;
 
-    /**
-     * @ORM\Column(name="costs", type="array")
-     */
-    private $costs;
 
 
     /**

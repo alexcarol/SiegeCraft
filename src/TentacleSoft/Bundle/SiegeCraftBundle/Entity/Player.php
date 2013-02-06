@@ -29,15 +29,15 @@ class Player
     private $name;
 
     /**
+     * @ORM\Column(name="resources", type="array")
+     */
+    private $resources;
+
+    /**
      *
      * @ORM\OneToOne(targetEntity="Fortress", inversedBy="player")
      */
     private $fortress;
-
-    /**
-     * @ORM\Column(name="resources", type="array")
-     */
-    private $resources;
 
     /**
      * @ORM\OneToMany(targetEntity="Unit", mappedBy="player")

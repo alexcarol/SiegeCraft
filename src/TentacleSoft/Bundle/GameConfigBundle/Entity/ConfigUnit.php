@@ -64,9 +64,23 @@ class ConfigUnit
     private $productionTime;
 
     /**
+     * @ORM\Column(name="costs", type="array")
+     */
+    private $costs;
+
+    /**
      * @ORM\ManyToOne(targetEntity="ConfigBuilding", inversedBy="units")
      */
     private $building;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ConfigTechnology", mappedBy="isRequiredByUnits")
+     * @ORM\JoinTable(name="unit_technology_requirements",
+     *      joinColumns={@ORM\JoinColumn(name="unit_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")}
+     *      )
+     */
+    private $requiredTechnologies;
 
     /**
      * Get id

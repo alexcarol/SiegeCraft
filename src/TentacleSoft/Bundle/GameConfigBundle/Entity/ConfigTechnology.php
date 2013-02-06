@@ -47,6 +47,37 @@ class ConfigTechnology
      */
     private $costs;
 
+    /**
+     * @ORM\ManyToMany(targetEntity="ConfigTechnology", mappedBy="requiredTechnologies")
+     */
+    private $isRequiredByTechnology;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ConfigTechnology", inversedBy="isRequiredByTechnologies")
+     * @ORM\JoinTable(name="technology_technology_requirements",
+     *      joinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="required_technology_id", referencedColumnName="id")}
+     *      )
+     */
+    private $requiredTechnologies;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ConfigBuilding", inversedBy="isRequiredByTechnologies")
+     * @ORM\JoinTable(name="technology_building_requirements",
+     *      joinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="building_id", referencedColumnName="id")}
+     *      )
+     */
+    private $isRequiredByBuildings;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ConfigUnit", inversedBy="isRequiredByTechnologies")
+     * @ORM\JoinTable(name="technology_unit_requirements",
+     *      joinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="unit_id", referencedColumnName="id")}
+     *      )
+     */
+    private $isRequiredByUnits;
 
     /**
      * Get id
