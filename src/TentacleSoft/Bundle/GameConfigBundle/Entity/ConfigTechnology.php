@@ -157,4 +157,169 @@ class ConfigTechnology
     {
         return $this->multiplier;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->isRequiredByTechnology = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->requiredTechnologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->isRequiredByBuildings = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->isRequiredByUnits = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+    
+    /**
+     * Set costs
+     *
+     * @param array $costs
+     * @return ConfigTechnology
+     */
+    public function setCosts($costs)
+    {
+        $this->costs = $costs;
+    
+        return $this;
+    }
+
+    /**
+     * Get costs
+     *
+     * @return array 
+     */
+    public function getCosts()
+    {
+        return $this->costs;
+    }
+
+    /**
+     * Add isRequiredByTechnology
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $isRequiredByTechnology
+     * @return ConfigTechnology
+     */
+    public function addIsRequiredByTechnology(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $isRequiredByTechnology)
+    {
+        $this->isRequiredByTechnology[] = $isRequiredByTechnology;
+    
+        return $this;
+    }
+
+    /**
+     * Remove isRequiredByTechnology
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $isRequiredByTechnology
+     */
+    public function removeIsRequiredByTechnology(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $isRequiredByTechnology)
+    {
+        $this->isRequiredByTechnology->removeElement($isRequiredByTechnology);
+    }
+
+    /**
+     * Get isRequiredByTechnology
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIsRequiredByTechnology()
+    {
+        return $this->isRequiredByTechnology;
+    }
+
+    /**
+     * Add requiredTechnologies
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologies
+     * @return ConfigTechnology
+     */
+    public function addRequiredTechnologie(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologies)
+    {
+        $this->requiredTechnologies[] = $requiredTechnologies;
+    
+        return $this;
+    }
+
+    /**
+     * Remove requiredTechnologies
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologies
+     */
+    public function removeRequiredTechnologie(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologies)
+    {
+        $this->requiredTechnologies->removeElement($requiredTechnologies);
+    }
+
+    /**
+     * Get requiredTechnologies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRequiredTechnologies()
+    {
+        return $this->requiredTechnologies;
+    }
+
+    /**
+     * Add isRequiredByBuildings
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuildings
+     * @return ConfigTechnology
+     */
+    public function addIsRequiredByBuilding(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuildings)
+    {
+        $this->isRequiredByBuildings[] = $isRequiredByBuildings;
+    
+        return $this;
+    }
+
+    /**
+     * Remove isRequiredByBuildings
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuildings
+     */
+    public function removeIsRequiredByBuilding(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuildings)
+    {
+        $this->isRequiredByBuildings->removeElement($isRequiredByBuildings);
+    }
+
+    /**
+     * Get isRequiredByBuildings
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIsRequiredByBuildings()
+    {
+        return $this->isRequiredByBuildings;
+    }
+
+    /**
+     * Add isRequiredByUnits
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $isRequiredByUnits
+     * @return ConfigTechnology
+     */
+    public function addIsRequiredByUnit(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $isRequiredByUnits)
+    {
+        $this->isRequiredByUnits[] = $isRequiredByUnits;
+    
+        return $this;
+    }
+
+    /**
+     * Remove isRequiredByUnits
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $isRequiredByUnits
+     */
+    public function removeIsRequiredByUnit(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $isRequiredByUnits)
+    {
+        $this->isRequiredByUnits->removeElement($isRequiredByUnits);
+    }
+
+    /**
+     * Get isRequiredByUnits
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIsRequiredByUnits()
+    {
+        return $this->isRequiredByUnits;
+    }
 }

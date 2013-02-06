@@ -1,0 +1,59 @@
+<h1>ConfigUnit</h1>
+
+<table class="record_properties">
+    <tbody>
+        <tr>
+            <th>Id</th>
+            <td>{{ entity.id }}</td>
+        </tr>
+        <tr>
+            <th>Name</th>
+            <td>{{ entity.name }}</td>
+        </tr>
+        <tr>
+            <th>Description</th>
+            <td>{{ entity.description }}</td>
+        </tr>
+        <tr>
+            <th>Baseattack</th>
+            <td>{{ entity.baseAttack }}</td>
+        </tr>
+        <tr>
+            <th>Basedefense</th>
+            <td>{{ entity.baseDefense }}</td>
+        </tr>
+        <tr>
+            <th>Basehealth</th>
+            <td>{{ entity.baseHealth }}</td>
+        </tr>
+        <tr>
+            <th>Productiontime</th>
+            <td>{{ entity.productionTime | date('s') }}</td>
+        </tr>
+        <tr>
+            <th>Costs</th>
+            {% for cost in entity.costs %}
+                <td>{{ cost }}</td>
+            {% endfor %}
+        </tr>
+    </tbody>
+</table>
+
+<ul class="record_actions">
+    <li>
+        <a href="{{ path('configunit') }}">
+            Back to the list
+        </a>
+    </li>
+    <li>
+        <a href="{{ path('configunit_edit', { 'id': entity.id }) }}">
+            Edit
+        </a>
+    </li>
+    <li>
+        <form action="{{ path('configunit_delete', { 'id': entity.id }) }}" method="post">
+            {{ form_widget(delete_form) }}
+            <button type="submit">Delete</button>
+        </form>
+    </li>
+</ul>
