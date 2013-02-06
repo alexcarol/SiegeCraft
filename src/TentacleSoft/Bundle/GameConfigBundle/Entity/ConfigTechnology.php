@@ -42,6 +42,11 @@ class ConfigTechnology
      */
     private $multiplier;
 
+    /**
+     * @ORM\Column(name="resources", type="array")
+     */
+    private $costs;
+
 
     /**
      * Get id

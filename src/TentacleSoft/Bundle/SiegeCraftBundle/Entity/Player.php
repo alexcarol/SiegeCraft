@@ -35,7 +35,7 @@ class Player
     private $fortress;
 
     /**
-     * @ORM\OneToMany(targetEntity="Resource", mappedBy="player")
+     * @ORM\Column(name="resources", type="array")
      */
     private $resources;
 
@@ -81,7 +81,6 @@ class Player
      */
     public function __construct()
     {
-        $this->resources = new \Doctrine\Common\Collections\ArrayCollection();
         $this->units = new \Doctrine\Common\Collections\ArrayCollection();
     }
     

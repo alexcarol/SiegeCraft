@@ -49,12 +49,32 @@ class ConfigBuilding
 
     /**
      * @ORM\ManyToMany(targetEntity="ConfigBuilding", inversedBy="isRequiredByBuildings")
-     * @ORM\JoinTable(name="requirements",
+     * @ORM\JoinTable(name="building_building_requirements",
      *      joinColumns={@ORM\JoinColumn(name="building_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="required_building_id", referencedColumnName="id")}
      *      )
      */
     private $requiredBuildings;
+
+    /**
+     * @ORM\ManyToMany(targetEntity="ConfigTechnology", inversedBy="isRequiredByBuildings")
+     * @ORM\JoinTable(name="building_technology_requirements",
+     *      joinColumns={@ORM\JoinColumn(name="building_id", referencedColumnName="id")},
+     *      inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")}
+     *      )
+     */
+    private $requiredTechnologies;
+
+    /**
+     * @ORM\OneToMany(targetEntity="ConfigUnit", mappedBy="building")
+     */
+    private $units;
+
+    /**
+     * @ORM\Column(name="costs", type="array")
+     */
+    private $costs;
+
 
     /**
      * Get id

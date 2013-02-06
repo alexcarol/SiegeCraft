@@ -63,6 +63,10 @@ class ConfigUnit
      */
     private $productionTime;
 
+    /**
+     * @ORM\ManyToOne(targetEntity="ConfigBuilding", inversedBy="units")
+     */
+    private $building;
 
     /**
      * Get id
