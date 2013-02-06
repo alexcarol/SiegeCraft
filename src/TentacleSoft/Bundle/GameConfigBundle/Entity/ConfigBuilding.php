@@ -155,4 +155,169 @@ class ConfigBuilding
     {
         return $this->multiplier;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->isRequiredByBuildings = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->requiredBuildings = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->requiredTechnologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->units = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set costs
+     *
+     * @param array $costs
+     * @return ConfigBuilding
+     */
+    public function setCosts($costs)
+    {
+        $this->costs = $costs;
+
+        return $this;
+    }
+
+    /**
+     * Get costs
+     *
+     * @return array 
+     */
+    public function getCosts()
+    {
+        return $this->costs;
+    }
+
+    /**
+     * Add isRequiredByBuildings
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuilding
+     * @return ConfigBuilding
+     */
+    public function addIsRequiredByBuilding(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuilding)
+    {
+        $this->isRequiredByBuildings[] = $isRequiredByBuilding;
+
+        return $this;
+    }
+
+    /**
+     * Remove isRequiredByBuildings
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuilding
+     */
+    public function removeIsRequiredByBuilding(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuilding)
+    {
+        $this->isRequiredByBuildings->removeElement($isRequiredByBuilding);
+    }
+
+    /**
+     * Get isRequiredByBuildings
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getIsRequiredByBuildings()
+    {
+        return $this->isRequiredByBuildings;
+    }
+
+    /**
+     * Add requiredBuildings
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $requiredBuilding
+     * @return ConfigBuilding
+     */
+    public function addRequiredBuilding(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $requiredBuilding)
+    {
+        $this->requiredBuildings[] = $requiredBuilding;
+
+        return $this;
+    }
+
+    /**
+     * Remove requiredBuildings
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $requiredBuilding
+     */
+    public function removeRequiredBuilding(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $requiredBuilding)
+    {
+        $this->requiredBuildings->removeElement($requiredBuilding);
+    }
+
+    /**
+     * Get requiredBuildings
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRequiredBuildings()
+    {
+        return $this->requiredBuildings;
+    }
+
+    /**
+     * Add requiredTechnologies
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie
+     * @return ConfigBuilding
+     */
+    public function addRequiredTechnologie(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie)
+    {
+        $this->requiredTechnologies[] = $requiredTechnologie;
+
+        return $this;
+    }
+
+    /**
+     * Remove requiredTechnologies
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie
+     */
+    public function removeRequiredTechnologie(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie)
+    {
+        $this->requiredTechnologies->removeElement($requiredTechnologie);
+    }
+
+    /**
+     * Get requiredTechnologies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRequiredTechnologies()
+    {
+        return $this->requiredTechnologies;
+    }
+
+    /**
+     * Add units
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $unit
+     * @return ConfigBuilding
+     */
+    public function addUnit(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $unit)
+    {
+        $this->units[] = $unit;
+
+        return $this;
+    }
+
+    /**
+     * Remove units
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $unit
+     */
+    public function removeUnit(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit $unit)
+    {
+        $this->units->removeElement($unit);
+    }
+
+    /**
+     * Get units
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getUnits()
+    {
+        return $this->units;
+    }
 }

@@ -229,4 +229,90 @@ class ConfigUnit
     {
         return $this->productionTime;
     }
+    /**
+     * Constructor
+     */
+    public function __construct()
+    {
+        $this->requiredTechnologies = new \Doctrine\Common\Collections\ArrayCollection();
+    }
+
+    /**
+     * Set costs
+     *
+     * @param array $costs
+     * @return ConfigUnit
+     */
+    public function setCosts($costs)
+    {
+        $this->costs = $costs;
+
+        return $this;
+    }
+
+    /**
+     * Get costs
+     *
+     * @return array 
+     */
+    public function getCosts()
+    {
+        return $this->costs;
+    }
+
+    /**
+     * Set building
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $building
+     * @return ConfigUnit
+     */
+    public function setBuilding(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding $building = null)
+    {
+        $this->building = $building;
+
+        return $this;
+    }
+
+    /**
+     * Get building
+     *
+     * @return \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigBuilding 
+     */
+    public function getBuilding()
+    {
+        return $this->building;
+    }
+
+    /**
+     * Add requiredTechnologies
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie
+     * @return ConfigUnit
+     */
+    public function addRequiredTechnologie(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie)
+    {
+        $this->requiredTechnologies[] = $requiredTechnologie;
+
+        return $this;
+    }
+
+    /**
+     * Remove requiredTechnologies
+     *
+     * @param \TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie
+     */
+    public function removeRequiredTechnologie(\TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie)
+    {
+        $this->requiredTechnologies->removeElement($requiredTechnologie);
+    }
+
+    /**
+     * Get requiredTechnologies
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getRequiredTechnologies()
+    {
+        return $this->requiredTechnologies;
+    }
 }
