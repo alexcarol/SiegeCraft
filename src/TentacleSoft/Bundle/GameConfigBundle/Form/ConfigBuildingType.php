@@ -15,9 +15,8 @@ class ConfigBuildingType extends AbstractType
             ->add('description')
             ->add('multiplier')
             ->add('costs')
-            ->add('isRequiredByBuildings')
-            ->add('requiredBuildings')
-            ->add('requiredTechnologies')
+            ->add('requiredBuildings', null,  array('required' => false))
+            ->add('requiredTechnologies', null,  array('required' => false))
         ;
     }
 

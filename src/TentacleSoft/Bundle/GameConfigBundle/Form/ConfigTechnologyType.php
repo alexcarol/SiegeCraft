@@ -15,10 +15,7 @@ class ConfigTechnologyType extends AbstractType
             ->add('description')
             ->add('multiplier')
             ->add('costs')
-            ->add('isRequiredByTechnology')
-            ->add('requiredTechnologies')
-            ->add('isRequiredByBuildings')
-            ->add('isRequiredByUnits')
+            ->add('requiredTechnologies', null,  array('required' => false))
         ;
     }
 
