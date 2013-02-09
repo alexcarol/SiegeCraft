@@ -64,7 +64,7 @@ class ConfigUnit
     private $productionTime;
 
     /**
-     * @ORM\Column(name="costs", type="array")
+     * @ORM\Column(name="costs", type="json_array")
      */
     private $costs;
 
@@ -235,6 +235,10 @@ class ConfigUnit
     public function __construct()
     {
         $this->requiredTechnologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->costs = array(
+            'g' => 0,
+            'e' => 0,
+        );
     }
 
     /**
@@ -314,5 +318,25 @@ class ConfigUnit
     public function getRequiredTechnologies()
     {
         return $this->requiredTechnologies;
+    }
+
+    public function getGoldCost()
+    {
+        return $this->costs['g'];
+    }
+
+    public function setGoldCost($cost)
+    {
+        $this->costs['g'] = $cost;
+    }
+
+    public function getEnergyCost()
+    {
+        return $this->costs['e'];
+    }
+
+    public function setEnergyCost($cost)
+    {
+        $this->costs['e'] = $cost;
     }
 }

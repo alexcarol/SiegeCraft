@@ -17,7 +17,8 @@ class ConfigUnitType extends AbstractType
             ->add('baseDefense')
             ->add('baseHealth')
             ->add('productionTime')
-            ->add('costs', 'collection', array('type' => 'string'))
+            ->add('goldCost')
+            ->add('energyCost')
             ->add('building', null, array('required' => false))
             ->add('requiredTechnologies', null, array('required' => false))
         ;

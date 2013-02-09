@@ -7,6 +7,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\Response;
 use TentacleSoft\Bundle\GameConfigBundle\Entity\ConfigUnit;
 use TentacleSoft\Bundle\GameConfigBundle\Form\ConfigUnitType;
 
@@ -94,6 +95,8 @@ class ConfigUnitController extends Controller
             $em->flush();
 
             return $this->redirect($this->generateUrl('configunit_show', array('id' => $entity->getId())));
+        } else {
+            return new Response('Form is not valid, there was some problem :/', 400);
         }
 
         return array(
