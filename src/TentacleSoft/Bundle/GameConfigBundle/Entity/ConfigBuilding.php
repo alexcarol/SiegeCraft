@@ -72,7 +72,10 @@ class ConfigBuilding
      */
     private $units;
 
-
+    public function __toString()
+    {
+        return $this->id . ' : ' . $this->name;
+    }
 
     /**
      * Get id

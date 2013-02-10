@@ -157,6 +157,8 @@ class ConfigUnitController extends Controller
             $em->flush();
 
             return $this->redirect($this->generateUrl('configunit_edit', array('id' => $id)));
+        } else {
+            return new Response(400, 'Error validating form :/');
         }
 
         return array(

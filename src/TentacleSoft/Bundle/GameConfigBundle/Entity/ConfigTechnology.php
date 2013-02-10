@@ -76,6 +76,11 @@ class ConfigTechnology
      */
     private $isRequiredByUnits;
 
+    public function __toString()
+    {
+        return $this->id . ' : ' . $this->name;
+    }
+
     /**
      * Get id
      *

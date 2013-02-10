@@ -36,22 +36,33 @@ trait Costs {
         return $this->costs;
     }
 
-
+    /**
+     * @return int
+     */
     public function getGoldCost()
     {
         return $this->costs['g'];
     }
 
+    /**
+     * @param int $cost
+     */
     public function setGoldCost($cost)
     {
         $this->costs['g'] = $cost;
     }
 
+    /**
+     * @return int
+     */
     public function getEnergyCost()
     {
         return $this->costs['e'];
     }
 
+    /**
+     * @param int $cost
+     */
     public function setEnergyCost($cost)
     {
         $this->costs['e'] = $cost;

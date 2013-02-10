@@ -20,7 +20,9 @@
         </tr>
         <tr>
             <th>Costs</th>
-            <td>{{ entity.costs }}</td>
+            {% for type, cost in entity.costs %}
+                <td>{{ type }} : {{ cost }}</td>
+            {% endfor %}
         </tr>
     </tbody>
 </table>
