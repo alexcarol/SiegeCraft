@@ -12,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ConfigBuilding
 {
+    use Costs;
+
     /**
      * @var integer
      *
@@ -41,11 +43,6 @@ class ConfigBuilding
      * @ORM\Column(name="multiplier", type="float")
      */
     private $multiplier;
-
-    /**
-     * @ORM\Column(name="costs", type="array")
-     */
-    private $costs;
 
     /**
      * @ORM\ManyToMany(targetEntity="ConfigBuilding", mappedBy="requiredBuildings")
@@ -164,29 +161,6 @@ class ConfigBuilding
         $this->requiredBuildings = new \Doctrine\Common\Collections\ArrayCollection();
         $this->requiredTechnologies = new \Doctrine\Common\Collections\ArrayCollection();
         $this->units = new \Doctrine\Common\Collections\ArrayCollection();
-    }
-
-    /**
-     * Set costs
-     *
-     * @param array $costs
-     * @return ConfigBuilding
-     */
-    public function setCosts($costs)
-    {
-        $this->costs = $costs;
-
-        return $this;
-    }
-
-    /**
-     * Get costs
-     *
-     * @return array 
-     */
-    public function getCosts()
-    {
-        return $this->costs;
     }
 
     /**
