@@ -14,7 +14,8 @@ class ConfigTechnologyType extends AbstractType
             ->add('name')
             ->add('description')
             ->add('multiplier')
-            ->add('costs')
+            ->add('goldCost', 'integer')
+            ->add('energyCost', 'integer')
             ->add('requiredTechnologies', null,  array('required' => false))
         ;
     }

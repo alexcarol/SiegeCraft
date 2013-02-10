@@ -10,6 +10,9 @@ class ConfigUnitType extends AbstractType
 {
     public function buildForm(FormBuilderInterface $builder, array $options)
     {
+        /**
+         * @TODO all the costs are being declarated explicitly in each, this doesn't sound very DRY to me, see if there's some way to avoid that
+         */
         $builder
             ->add('name')
             ->add('description')
