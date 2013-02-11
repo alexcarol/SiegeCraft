@@ -9,11 +9,31 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 class DefaultController extends Controller
 {
     /**
-     * @Route("/hello/{name}")
+     * @Route("/")
      * @Template()
      */
-    public function indexAction($name)
+    public function indexAction()
     {
-        return array('name' => $name);
+        $tabs = array();
+        $resources = array();
+        $data = array();
+        $buildings = array();
+        $technologies = array();
+        $units = array();
+        $movingUnits = array();
+
+        return array(
+            'tabs' => $tabs,
+            'player' => array(
+                'resources' => $resources,
+                'data' => $data,
+            ),
+            'underConstruction' => array(
+                'buildings' => $buildings,
+                'technologies' => $technologies,
+                'units' => $units,
+            ),
+            'movingUnits' => $movingUnits,
+        );
     }
 }
