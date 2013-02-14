@@ -22,6 +22,13 @@ class Player
     private $id;
 
     /**
+     * @var User
+     *
+     * @ORM\OneToOne(targetEntity="User", inversedBy="player")
+     */
+    private $user;
+
+    /**
      * @var string
      *
      * @ORM\Column(name="name", type="string", length=255)
@@ -171,5 +178,41 @@ class Player
     public function getUnits()
     {
         return $this->units;
+    }
+
+    /**
+     * Set resources
+     *
+     * @param array $resources
+     * @return Player
+     */
+    public function setResources($resources)
+    {
+        $this->resources = $resources;
+    
+        return $this;
+    }
+
+    /**
+     * Set user
+     *
+     * @param \TS\Bundle\SiegeCraftBundle\Entity\User $user
+     * @return Player
+     */
+    public function setUser(\TS\Bundle\SiegeCraftBundle\Entity\User $user = null)
+    {
+        $this->user = $user;
+    
+        return $this;
+    }
+
+    /**
+     * Get user
+     *
+     * @return \TS\Bundle\SiegeCraftBundle\Entity\User 
+     */
+    public function getUser()
+    {
+        return $this->user;
     }
 }
