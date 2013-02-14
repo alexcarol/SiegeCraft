@@ -14,7 +14,7 @@ class DefaultController extends Controller
      */
     public function indexAction()
     {
-        $tabs = array();
+        $tabs = $this->container->get('siege_craft.service.user_info')->getUserTabs(1);
         $resources = array();
         $data = array();
         $buildings = array();
