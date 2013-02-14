@@ -20,8 +20,8 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new TentacleSoft\Bundle\SiegeCraftBundle\SiegeCraftBundle(),
-            new TentacleSoft\Bundle\GameConfigBundle\GameConfigBundle(),
+            new TS\Bundle\SiegeCraftBundle\TSSiegeCraftBundle(),
+            new TS\Bundle\GameConfigBundle\TSGameConfigBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
