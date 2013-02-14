@@ -6,7 +6,7 @@
         "psr-0": { "": "src/" }
     },
     "require": {
-        "php": ">=5.3.3",
+        "php": ">=5.4",
         "symfony/symfony": "2.1.*",
         "doctrine/orm": ">=2.2.3,<2.4-dev",
         "doctrine/doctrine-bundle": "1.1.*",
@@ -19,7 +19,12 @@
         "sensio/generator-bundle": "2.1.*",
         "jms/security-extra-bundle": "1.2.*",
         "jms/di-extra-bundle": "1.1.*",
-        "kriswallsmith/assetic": "1.1.*@dev"
+        "kriswallsmith/assetic": "1.1.*@dev",
+        "friendsofsymfony/user-bundle": "*"
+    },
+    "require-dev":{
+        "phpunit/phpunit":"~3.7.12",
+        "mockery/mockery":"dev-master#1a1a222"
     },
     "scripts": {
         "post-install-cmd": [
