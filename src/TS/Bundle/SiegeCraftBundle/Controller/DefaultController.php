@@ -51,7 +51,7 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/fortress/node/")
+     * @Route("/fortress/node")
      * @Template()
      */
     public function fortressNodeAction()
@@ -65,6 +65,54 @@ class DefaultController extends Controller
 
         return array(
             'units' => $units
+        );
+    }
+    
+    /**
+     * @Route("/resources")
+     * @Template()
+     */
+    public function resourcesAction()
+    {
+        $mines = array();
+        /*
+         * Each of the mines of the player
+         */
+
+        return array(
+            'mines' => $mines
+        );
+    }
+    
+    
+    /**
+     * @Route("/observatory")
+     * @Template()
+     */
+    public function observatoryAction()
+    {
+        $regions = array();
+        /*
+        * Returns all the regions of a section of the map (must get the section from GET)
+        */
+        return array(
+            'regions' => $regions
+        );
+    }
+    
+    /**
+     * @Route("/observatory/exploration")
+     * @Template()
+     */
+    public function observatoryExplorationAction()
+    {
+        $information = array();
+        /*
+         * Sends the information of an explored node (A message with information)
+         * and actualizes the number of explorations left.
+         */
+        return array(
+            'information' => $information
         );
     }
 }
