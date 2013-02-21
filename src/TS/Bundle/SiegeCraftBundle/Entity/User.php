@@ -25,6 +25,16 @@ class User extends BaseUser {
     private $player;
 
     /**
+     * Get id
+     *
+     * @return integer
+     */
+    public function getId()
+    {
+        return $this->id;
+    }
+
+    /**
      * Set player
      *
      * @param \TS\Bundle\SiegeCraftBundle\Entity\Player $player
