@@ -6,6 +6,10 @@ use Symfony\Bundle\FrameworkBundle\Test\WebTestCase;
 
 class ConfigUnitControllerTest extends WebTestCase
 {
+    public function testConfigUnit()
+    {
+        $this->markTestIncomplete();
+    }
     /*
     public function testCompleteScenario()
     {
