@@ -27,7 +27,7 @@ class ConfigTechnologyController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('TSGameConfigBundleConfigTechnology')->findAll();
+        $entities = $em->getRepository('TSGameConfigBundle:ConfigTechnology')->findAll();
 
         return array(
             'entities' => $entities,
@@ -44,7 +44,7 @@ class ConfigTechnologyController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigTechnology')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigTechnology')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigTechnology entity.');
@@ -80,7 +80,7 @@ class ConfigTechnologyController extends Controller
      *
      * @Route("/create", name="configtechnology_create")
      * @Method("POST")
-     * @Template("TSGameConfigBundleConfigTechnology:new.html.twig")
+     * @Template("TSGameConfigBundle:ConfigTechnology:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -112,7 +112,7 @@ class ConfigTechnologyController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigTechnology')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigTechnology')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigTechnology entity.');
@@ -133,13 +133,13 @@ class ConfigTechnologyController extends Controller
      *
      * @Route("/{id}/update", name="configtechnology_update")
      * @Method("POST")
-     * @Template("TSGameConfigBundleConfigTechnology:edit.html.twig")
+     * @Template("TSGameConfigBundle:ConfigTechnology:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigTechnology')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigTechnology')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigTechnology entity.');
@@ -176,7 +176,7 @@ class ConfigTechnologyController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('TSGameConfigBundleConfigTechnology')->find($id);
+            $entity = $em->getRepository('TSGameConfigBundle:ConfigTechnology')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find ConfigTechnology entity.');

@@ -27,7 +27,7 @@ class ConfigBuildingController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('TSGameConfigBundleConfigBuilding')->findAll();
+        $entities = $em->getRepository('TSGameConfigBundle:ConfigBuilding')->findAll();
 
         return array(
             'entities' => $entities,
@@ -44,7 +44,7 @@ class ConfigBuildingController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigBuilding')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigBuilding')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigBuilding entity.');
@@ -80,7 +80,7 @@ class ConfigBuildingController extends Controller
      *
      * @Route("/create", name="configbuilding_create")
      * @Method("POST")
-     * @Template("TSGameConfigBundleConfigBuilding:new.html.twig")
+     * @Template("TSGameConfigBundle:ConfigBuilding:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -112,7 +112,7 @@ class ConfigBuildingController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigBuilding')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigBuilding')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigBuilding entity.');
@@ -133,13 +133,13 @@ class ConfigBuildingController extends Controller
      *
      * @Route("/{id}/update", name="configbuilding_update")
      * @Method("POST")
-     * @Template("TSGameConfigBundleConfigBuilding:edit.html.twig")
+     * @Template("TSGameConfigBundle:ConfigBuilding:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigBuilding')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigBuilding')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigBuilding entity.');
@@ -176,7 +176,7 @@ class ConfigBuildingController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('TSGameConfigBundleConfigBuilding')->find($id);
+            $entity = $em->getRepository('TSGameConfigBundle:ConfigBuilding')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find ConfigBuilding entity.');

@@ -18,7 +18,9 @@
             <td>{{ entity.name }}</td>
             <td>{{ entity.description }}</td>
             <td>{{ entity.multiplier }}</td>
-            <td>{{ entity.costs }}</td>
+            {% for cost in entity.costs %}
+                <td>{{ cost }}</td>
+            {% endfor %}
             <td>
                 <ul>
                     <li>

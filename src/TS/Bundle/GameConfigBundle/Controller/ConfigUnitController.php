@@ -28,7 +28,7 @@ class ConfigUnitController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entities = $em->getRepository('TSGameConfigBundleConfigUnit')->findAll();
+        $entities = $em->getRepository('TSGameConfigBundle:ConfigUnit')->findAll();
 
         return array(
             'entities' => $entities,
@@ -45,7 +45,7 @@ class ConfigUnitController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigUnit')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigUnit')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigUnit entity.');
@@ -81,7 +81,7 @@ class ConfigUnitController extends Controller
      *
      * @Route("/create", name="configunit_create")
      * @Method("POST")
-     * @Template("TSGameConfigBundleConfigUnit:new.html.twig")
+     * @Template("TSGameConfigBundle:ConfigUnit:new.html.twig")
      */
     public function createAction(Request $request)
     {
@@ -115,7 +115,7 @@ class ConfigUnitController extends Controller
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigUnit')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigUnit')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigUnit entity.');
@@ -136,13 +136,13 @@ class ConfigUnitController extends Controller
      *
      * @Route("/{id}/update", name="configunit_update")
      * @Method("POST")
-     * @Template("TSGameConfigBundleConfigUnit:edit.html.twig")
+     * @Template("TSGameConfigBundle:ConfigUnit:edit.html.twig")
      */
     public function updateAction(Request $request, $id)
     {
         $em = $this->getDoctrine()->getManager();
 
-        $entity = $em->getRepository('TSGameConfigBundleConfigUnit')->find($id);
+        $entity = $em->getRepository('TSGameConfigBundle:ConfigUnit')->find($id);
 
         if (!$entity) {
             throw $this->createNotFoundException('Unable to find ConfigUnit entity.');
@@ -181,7 +181,7 @@ class ConfigUnitController extends Controller
 
         if ($form->isValid()) {
             $em = $this->getDoctrine()->getManager();
-            $entity = $em->getRepository('TSGameConfigBundleConfigUnit')->find($id);
+            $entity = $em->getRepository('TSGameConfigBundle:ConfigUnit')->find($id);
 
             if (!$entity) {
                 throw $this->createNotFoundException('Unable to find ConfigUnit entity.');
