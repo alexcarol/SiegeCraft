@@ -30,5 +30,4 @@ class GameConfigLoaderService
     {
         return $this->em->getRepository('TSGameConfigBundle:ConfigTechnology')->findAll();
     }
-
 }
