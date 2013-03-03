@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ConfigBuilding
 {
-    use Costs;
+    use Traits\Costs;
 
     /**
      * @var integer
@@ -80,7 +80,7 @@ class ConfigBuilding
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -103,7 +103,7 @@ class ConfigBuilding
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -126,7 +126,7 @@ class ConfigBuilding
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -149,7 +149,7 @@ class ConfigBuilding
     /**
      * Get multiplier
      *
-     * @return float 
+     * @return float
      */
     public function getMultiplier()
     {
@@ -192,7 +192,7 @@ class ConfigBuilding
     /**
      * Get isRequiredByBuildings
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getIsRequiredByBuildings()
     {
@@ -225,7 +225,7 @@ class ConfigBuilding
     /**
      * Get requiredBuildings
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRequiredBuildings()
     {
@@ -258,7 +258,7 @@ class ConfigBuilding
     /**
      * Get requiredTechnologies
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRequiredTechnologies()
     {
@@ -291,7 +291,7 @@ class ConfigBuilding
     /**
      * Get units
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUnits()
     {

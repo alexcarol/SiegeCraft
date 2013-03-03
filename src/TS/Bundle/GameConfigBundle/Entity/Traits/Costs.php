@@ -1,6 +1,6 @@
 <?php
 
-namespace TS\Bundle\GameConfigBundle\Entity;
+namespace TS\Bundle\GameConfigBundle\Entity\Traits;
 
 use Doctrine\ORM\Mapping as ORM;
 

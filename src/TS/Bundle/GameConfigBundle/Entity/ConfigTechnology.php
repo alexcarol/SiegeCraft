@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ConfigTechnology
 {
-    use Costs;
+    use Traits\Costs;
 
     /**
      * @var integer
@@ -84,7 +84,7 @@ class ConfigTechnology
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -107,7 +107,7 @@ class ConfigTechnology
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -130,7 +130,7 @@ class ConfigTechnology
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -153,7 +153,7 @@ class ConfigTechnology
     /**
      * Get multiplier
      *
-     * @return float 
+     * @return float
      */
     public function getMultiplier()
     {
@@ -179,7 +179,7 @@ class ConfigTechnology
     public function addIsRequiredByTechnology(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $isRequiredByTechnology)
     {
         $this->isRequiredByTechnology[] = $isRequiredByTechnology;
-    
+
         return $this;
     }
 
@@ -196,7 +196,7 @@ class ConfigTechnology
     /**
      * Get isRequiredByTechnology
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getIsRequiredByTechnology()
     {
@@ -212,7 +212,7 @@ class ConfigTechnology
     public function addRequiredTechnologie(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologies)
     {
         $this->requiredTechnologies[] = $requiredTechnologies;
-    
+
         return $this;
     }
 
@@ -229,7 +229,7 @@ class ConfigTechnology
     /**
      * Get requiredTechnologies
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRequiredTechnologies()
     {
@@ -245,7 +245,7 @@ class ConfigTechnology
     public function addIsRequiredByBuilding(\TS\Bundle\GameConfigBundle\Entity\ConfigBuilding $isRequiredByBuildings)
     {
         $this->isRequiredByBuildings[] = $isRequiredByBuildings;
-    
+
         return $this;
     }
 
@@ -262,7 +262,7 @@ class ConfigTechnology
     /**
      * Get isRequiredByBuildings
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getIsRequiredByBuildings()
     {
@@ -278,7 +278,7 @@ class ConfigTechnology
     public function addIsRequiredByUnit(\TS\Bundle\GameConfigBundle\Entity\ConfigUnit $isRequiredByUnits)
     {
         $this->isRequiredByUnits[] = $isRequiredByUnits;
-    
+
         return $this;
     }
 
@@ -295,7 +295,7 @@ class ConfigTechnology
     /**
      * Get isRequiredByUnits
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getIsRequiredByUnits()
     {

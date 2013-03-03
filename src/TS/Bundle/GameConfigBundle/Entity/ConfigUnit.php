@@ -12,7 +12,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class ConfigUnit
 {
-    use Costs;
+    use Traits\Costs;
 
     /**
      * @var integer
@@ -89,7 +89,7 @@ class ConfigUnit
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -112,7 +112,7 @@ class ConfigUnit
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -135,7 +135,7 @@ class ConfigUnit
     /**
      * Get description
      *
-     * @return string 
+     * @return string
      */
     public function getDescription()
     {
@@ -158,7 +158,7 @@ class ConfigUnit
     /**
      * Get baseAttack
      *
-     * @return integer 
+     * @return integer
      */
     public function getBaseAttack()
     {
@@ -181,7 +181,7 @@ class ConfigUnit
     /**
      * Get baseDefense
      *
-     * @return integer 
+     * @return integer
      */
     public function getBaseDefense()
     {
@@ -204,7 +204,7 @@ class ConfigUnit
     /**
      * Get baseHealth
      *
-     * @return integer 
+     * @return integer
      */
     public function getBaseHealth()
     {
@@ -227,7 +227,7 @@ class ConfigUnit
     /**
      * Get productionTime
      *
-     * @return \DateTime 
+     * @return \DateTime
      */
     public function getProductionTime()
     {
@@ -291,7 +291,7 @@ class ConfigUnit
     /**
      * Get requiredTechnologies
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getRequiredTechnologies()
     {
