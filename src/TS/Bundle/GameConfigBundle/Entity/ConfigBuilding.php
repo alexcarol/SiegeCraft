@@ -22,7 +22,7 @@ class ConfigBuilding
      * @ORM\GeneratedValue(strategy="AUTO")
      */
     private $id;
-
+    
     /**
      * @var string
      *
@@ -43,6 +43,12 @@ class ConfigBuilding
      * @ORM\Column(name="multiplier", type="float")
      */
     private $multiplier;
+    
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="ConfigBuildingLevel", mappedBy="configBuilding")
+     */
+    private $levels;
 
     public function __toString()
     {

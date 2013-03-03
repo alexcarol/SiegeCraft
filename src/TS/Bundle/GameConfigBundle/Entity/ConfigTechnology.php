@@ -43,6 +43,12 @@ class ConfigTechnology
      * @ORM\Column(name="multiplier", type="float")
      */
     private $multiplier;
+    
+    /**
+     *
+     * @ORM\OneToMany(targetEntity="ConfigTechnologyLevel", mappedBy="configTechnology")
+     */
+    private $levels;
 
     public function __toString()
     {
