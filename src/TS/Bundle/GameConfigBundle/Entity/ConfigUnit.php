@@ -68,12 +68,12 @@ class ConfigUnit
 
 
     /**
-     * @ORM\ManyToOne(targetEntity="ConfigBuilding", inversedBy="units")
+     * @ORM\ManyToOne(targetEntity="ConfigBuildingLevel", inversedBy="units")
      */
     private $building;
 
     /**
-     * @ORM\ManyToMany(targetEntity="ConfigTechnology", mappedBy="isRequiredByUnits")
+     * @ORM\ManyToMany(targetEntity="ConfigTechnologyLevel", mappedBy="isRequiredByUnits")
      * @ORM\JoinTable(name="unit_technology_requirements",
      *      joinColumns={@ORM\JoinColumn(name="unit_id", referencedColumnName="id")},
      *      inverseJoinColumns={@ORM\JoinColumn(name="technology_id", referencedColumnName="id")}
@@ -245,10 +245,10 @@ class ConfigUnit
     /**
      * Set building
      *
-     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigBuilding $building
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigBuildingLevel $building
      * @return ConfigUnit
      */
-    public function setBuilding(\TS\Bundle\GameConfigBundle\Entity\ConfigBuilding $building = null)
+    public function setBuilding(\TS\Bundle\GameConfigBundle\Entity\ConfigBuildingLevel $building = null)
     {
         $this->building = $building;
 
@@ -258,7 +258,7 @@ class ConfigUnit
     /**
      * Get building
      *
-     * @return \TS\Bundle\GameConfigBundle\Entity\ConfigBuilding
+     * @return \TS\Bundle\GameConfigBundle\Entity\ConfigBuildingLevel
      */
     public function getBuilding()
     {
@@ -268,10 +268,10 @@ class ConfigUnit
     /**
      * Add requiredTechnologies
      *
-     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie
      * @return ConfigUnit
      */
-    public function addRequiredTechnologie(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie)
+    public function addRequiredTechnologie(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie)
     {
         $this->requiredTechnologies[] = $requiredTechnologie;
 
@@ -281,9 +281,9 @@ class ConfigUnit
     /**
      * Remove requiredTechnologies
      *
-     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie
      */
-    public function removeRequiredTechnologie(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $requiredTechnologie)
+    public function removeRequiredTechnologie(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie)
     {
         $this->requiredTechnologies->removeElement($requiredTechnologie);
     }
