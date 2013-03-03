@@ -67,7 +67,7 @@ class DefaultController extends Controller
             'units' => $units
         );
     }
-    
+
     /**
      * @Route("/resources")
      * @Template()
@@ -83,8 +83,8 @@ class DefaultController extends Controller
             'mines' => $mines
         );
     }
-    
-    
+
+
     /**
      * @Route("/observatory")
      * @Template()
@@ -99,7 +99,7 @@ class DefaultController extends Controller
             'regions' => $regions
         );
     }
-    
+
     /**
      * @Route("/observatory/exploration")
      * @Template()

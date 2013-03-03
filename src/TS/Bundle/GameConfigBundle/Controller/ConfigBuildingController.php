@@ -13,7 +13,7 @@ use TS\Bundle\GameConfigBundle\Form\ConfigBuildingType;
 /**
  * ConfigBuilding controller.
  *
- * @Route("/configbuilding")
+ * @Route("/building")
  */
 class ConfigBuildingController extends Controller
 {

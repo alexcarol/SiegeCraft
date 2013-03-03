@@ -14,7 +14,7 @@ use TS\Bundle\GameConfigBundle\Form\ConfigUnitType;
 /**
  * ConfigUnit controller.
  *
- * @Route("/configunit")
+ * @Route("/unit")
  */
 class ConfigUnitController extends Controller
 {

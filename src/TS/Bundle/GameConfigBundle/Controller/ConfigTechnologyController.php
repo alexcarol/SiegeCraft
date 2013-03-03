@@ -13,7 +13,7 @@ use TS\Bundle\GameConfigBundle\Form\ConfigTechnologyType;
 /**
  * ConfigTechnology controller.
  *
- * @Route("/configtechnology")
+ * @Route("/technology")
  */
 class ConfigTechnologyController extends Controller
 {
