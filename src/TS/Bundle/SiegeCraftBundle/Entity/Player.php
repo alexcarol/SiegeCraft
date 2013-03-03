@@ -24,7 +24,7 @@ class Player
     /**
      * @var User
      *
-     * @ORM\OneToOne(targetEntity="User", inversedBy="player")
+     * @ORM\OneToOne(targetEntity="\TS\Bundle\UserBundle\Entity\User", inversedBy="player")
      */
     private $user;
 
@@ -54,7 +54,7 @@ class Player
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -70,14 +70,14 @@ class Player
     public function setName($name)
     {
         $this->name = $name;
-    
+
         return $this;
     }
 
     /**
      * Get name
      *
-     * @return string 
+     * @return string
      */
     public function getName()
     {
@@ -90,7 +90,7 @@ class Player
     {
         $this->units = new \Doctrine\Common\Collections\ArrayCollection();
     }
-    
+
     /**
      * Set fortress
      *
@@ -100,7 +100,7 @@ class Player
     public function setFortress(Fortress $fortress = null)
     {
         $this->fortress = $fortress;
-    
+
         return $this;
     }
 
@@ -123,7 +123,7 @@ class Player
     public function addResource(Resource $resources)
     {
         $this->resources[] = $resources;
-    
+
         return $this;
     }
 
@@ -140,7 +140,7 @@ class Player
     /**
      * Get resources
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getResources()
     {
@@ -156,7 +156,7 @@ class Player
     public function addUnit(Unit $units)
     {
         $this->units[] = $units;
-    
+
         return $this;
     }
 
@@ -173,7 +173,7 @@ class Player
     /**
      * Get units
      *
-     * @return \Doctrine\Common\Collections\Collection 
+     * @return \Doctrine\Common\Collections\Collection
      */
     public function getUnits()
     {
@@ -189,27 +189,27 @@ class Player
     public function setResources($resources)
     {
         $this->resources = $resources;
-    
+
         return $this;
     }
 
     /**
      * Set user
      *
-     * @param \TS\Bundle\SiegeCraftBundle\Entity\User $user
+     * @param \TS\Bundle\UserBundle\Entity\User $user
      * @return Player
      */
-    public function setUser(\TS\Bundle\SiegeCraftBundle\Entity\User $user = null)
+    public function setUser(\TS\Bundle\UserBundle\Entity\User $user = null)
     {
         $this->user = $user;
-    
+
         return $this;
     }
 
     /**
      * Get user
      *
-     * @return \TS\Bundle\SiegeCraftBundle\Entity\User 
+     * @return \TS\Bundle\UserBundle\Entity\User
      */
     public function getUser()
     {

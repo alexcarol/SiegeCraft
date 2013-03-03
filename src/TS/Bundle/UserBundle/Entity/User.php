@@ -1,6 +1,6 @@
 <?php
 
-namespace TS\Bundle\SiegeCraftBundle\Entity;
+namespace TS\Bundle\UserBundle\Entity;
 
 use FOS\UserBundle\Entity\User as BaseUser;
 
@@ -19,7 +19,7 @@ class User extends BaseUser {
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="Player", mappedBy="user")
+     * @ORM\OneToOne(targetEntity="\TS\Bundle\SiegeCraftBundle\Entity\Player", mappedBy="user")
      * @var Player
      */
     private $player;
@@ -43,14 +43,14 @@ class User extends BaseUser {
     public function setPlayer(\TS\Bundle\SiegeCraftBundle\Entity\Player $player = null)
     {
         $this->player = $player;
-    
+
         return $this;
     }
 
     /**
      * Get player
      *
-     * @return \TS\Bundle\SiegeCraftBundle\Entity\Player 
+     * @return \TS\Bundle\SiegeCraftBundle\Entity\Player
      */
     public function getPlayer()
     {

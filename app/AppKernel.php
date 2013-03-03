@@ -22,6 +22,7 @@ class AppKernel extends Kernel
             new FOS\UserBundle\FOSUserBundle(),
             new TS\Bundle\SiegeCraftBundle\TSSiegeCraftBundle(),
             new TS\Bundle\GameConfigBundle\TSGameConfigBundle(),
+            new TS\Bundle\UserBundle\TSUserBundle(),
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
