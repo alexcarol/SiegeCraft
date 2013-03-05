@@ -23,7 +23,6 @@ class ConfigTechnologyLevel
     private $id;
 
     /**
-     * @var integer
      *
      * @ORM\Column(name="level", type="integer")
      */
@@ -104,6 +103,29 @@ class ConfigTechnologyLevel
         return $this;
     }
 
+    /**
+     * Get level
+     *
+     * @return integer
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+    
+    /**
+     * Set name
+     *
+     * @param integer $level
+     * @return ConfigTechnologyLevel
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+
+        return $this;
+    }
+    
     /**
      * Get name
      *

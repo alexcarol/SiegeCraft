@@ -23,7 +23,6 @@ class ConfigBuildingLevel
     private $id;
     
     /**
-     * @var integer
      *
      * @ORM\Column(name="level", type="integer")
      */
