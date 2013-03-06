@@ -2,8 +2,7 @@
 
 {% block body %}
 
-<h1>ConfigBuilding</h1>
-
+<h1>ConfigBuildingLevel</h1>
 <table class="record_properties">
     <tbody>
         <tr>
@@ -15,12 +14,8 @@
             <td>{{ entity.name }}</td>
         </tr>
         <tr>
-            <th>Description</th>
-            <td>{{ entity.description }}</td>
-        </tr>
-        <tr>
-            <th>Multiplier</th>
-            <td>{{ entity.multiplier }}</td>
+            <th>Level</th>
+            <td>{{ entity.level }}</td>
         </tr>
         <tr>
             <th>Costs</th>
@@ -33,17 +28,17 @@
 
 <ul class="record_actions">
     <li>
-        <a href="{{ path('configbuilding') }}">
+        <a href="{{ path('configbuildinglevel') }}">
             Back to the list
         </a>
     </li>
     <li>
-        <a href="{{ path('configbuilding_edit', { 'id': entity.id }) }}">
+        <a href="{{ path('configbuildinglevel_edit', { 'id': entity.id }) }}">
             Edit
         </a>
     </li>
     <li>
-        <form action="{{ path('configbuilding_delete', { 'id': entity.id }) }}" method="post">
+        <form action="{{ path('configbuildinglevel_delete', { 'id': entity.id }) }}" method="post">
             {{ form_widget(delete_form) }}
             <button type="submit">Delete</button>
         </form>
