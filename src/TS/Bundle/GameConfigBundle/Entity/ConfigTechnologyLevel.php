@@ -311,4 +311,27 @@ class ConfigTechnologyLevel
     {
         return $this->requiredBuildings;
     }
+
+    /**
+     * Set configTechnology
+     *
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $configTechnology
+     * @return ConfigTechnologyLevel
+     */
+    public function setConfigTechnology(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnology $configTechnology = null)
+    {
+        $this->configTechnology = $configTechnology;
+    
+        return $this;
+    }
+
+    /**
+     * Get configTechnology
+     *
+     * @return \TS\Bundle\GameConfigBundle\Entity\ConfigTechnology 
+     */
+    public function getConfigTechnology()
+    {
+        return $this->configTechnology;
+    }
 }

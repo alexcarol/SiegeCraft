@@ -141,5 +141,37 @@ class ConfigBuilding
     public function __construct()
     {
     }
+
+    /**
+     * Add levels
+     *
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigBuildingLevel $levels
+     * @return ConfigBuilding
+     */
+    public function addLevel(\TS\Bundle\GameConfigBundle\Entity\ConfigBuildingLevel $levels)
+    {
+        $this->levels[] = $levels;
     
+        return $this;
+    }
+
+    /**
+     * Remove levels
+     *
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigBuildingLevel $levels
+     */
+    public function removeLevel(\TS\Bundle\GameConfigBundle\Entity\ConfigBuildingLevel $levels)
+    {
+        $this->levels->removeElement($levels);
+    }
+
+    /**
+     * Get levels
+     *
+     * @return \Doctrine\Common\Collections\Collection 
+     */
+    public function getLevels()
+    {
+        return $this->levels;
+    }
 }

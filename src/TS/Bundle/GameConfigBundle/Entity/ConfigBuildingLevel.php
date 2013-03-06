@@ -328,4 +328,50 @@ class ConfigBuildingLevel
     {
         return $this->isRequiredByTechnologies;
     }
+
+    /**
+     * Set level
+     *
+     * @param integer $level
+     * @return ConfigBuildingLevel
+     */
+    public function setLevel($level)
+    {
+        $this->level = $level;
+    
+        return $this;
+    }
+
+    /**
+     * Get level
+     *
+     * @return integer 
+     */
+    public function getLevel()
+    {
+        return $this->level;
+    }
+
+    /**
+     * Set configBuilding
+     *
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigBuilding $configBuilding
+     * @return ConfigBuildingLevel
+     */
+    public function setConfigBuilding(\TS\Bundle\GameConfigBundle\Entity\ConfigBuilding $configBuilding = null)
+    {
+        $this->configBuilding = $configBuilding;
+    
+        return $this;
+    }
+
+    /**
+     * Get configBuilding
+     *
+     * @return \TS\Bundle\GameConfigBundle\Entity\ConfigBuilding 
+     */
+    public function getConfigBuilding()
+    {
+        return $this->configBuilding;
+    }
 }
