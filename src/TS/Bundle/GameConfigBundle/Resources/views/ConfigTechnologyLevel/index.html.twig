@@ -2,15 +2,13 @@
 
 {% block body %}
 
-<h1>ConfigBuilding list</h1>
-
+<h1>ConfigTechnologyLevel list</h1>
 <table class="records_list">
     <thead>
         <tr>
             <th>Id</th>
             <th>Name</th>
-            <th>Description</th>
-            <th>Multiplier</th>
+            <th>Level</th>
             <th>Costs</th>
             <th>Actions</th>
         </tr>
@@ -18,20 +16,19 @@
     <tbody>
     {% for entity in entities %}
         <tr>
-            <td><a href="{{ path('configbuilding_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
+            <td><a href="{{ path('configtechnologylevel_show', { 'id': entity.id }) }}">{{ entity.id }}</a></td>
             <td>{{ entity.name }}</td>
-            <td>{{ entity.description }}</td>
-            <td>{{ entity.multiplier }}</td>
+            <td>{{ entity.level }}</td>
             {% for cost in entity.costs %}
                 <td>{{ cost }}</td>
             {% endfor %}
             <td>
                 <ul>
                     <li>
-                        <a href="{{ path('configbuilding_show', { 'id': entity.id }) }}">show</a>
+                        <a href="{{ path('configtechnologylevel_show', { 'id': entity.id }) }}">show</a>
                     </li>
                     <li>
-                        <a href="{{ path('configbuilding_edit', { 'id': entity.id }) }}">edit</a>
+                        <a href="{{ path('configtechnologylevel_edit', { 'id': entity.id }) }}">edit</a>
                     </li>
                 </ul>
             </td>
@@ -42,7 +39,7 @@
 
 <ul>
     <li>
-        <a href="{{ path('configbuilding_new') }}">
+        <a href="{{ path('configtechnologylevel_new') }}">
             Create a new entry
         </a>
     </li>
