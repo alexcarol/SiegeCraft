@@ -3,11 +3,25 @@
     <head>
         <meta charset="UTF-8" />
         <title>{% block title %}SiegeCraft{% endblock %}</title>
-        {% block stylesheets %}{% endblock %}
+        {% block stylesheets %}
+            {% stylesheets output='css/siegecraft.css' filter='?yui_css'
+                '@TSSiegeCraftBundle/Resources/public/css/*'
+            %}
+            <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="screen" />
+            {% endstylesheets %}
+        {% endblock %}
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
         {% block body %}{% endblock %}
-        {% block javascripts %}{% endblock %}
+        {% block javascripts %}
+            {% javascripts output='js/siegecraft.js' filter='?yui_js'
+                '@TSSiegeCraftBundle/Resources/public/js/jquery-1.9.1.js'
+                '@TSSiegeCraftBundle/Resources/public/js/bootstrap.js'
+                '@TSSiegeCraftBundle/Resources/public/js/*'
+            %}
+                <script src="{{ asset_url }}"></script>
+            {% endjavascripts %}
+        {% endblock %}
     </body>
 </html>
