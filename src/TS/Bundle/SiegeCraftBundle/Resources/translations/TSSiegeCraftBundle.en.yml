@@ -1,2 +1,5 @@
 siegecraft:
     title: SiegeCraft
+
+messages:
+    to_game: Return to the game.
