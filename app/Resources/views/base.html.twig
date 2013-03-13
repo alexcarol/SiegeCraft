@@ -2,7 +2,7 @@
 <html>
     <head>
         <meta charset="UTF-8" />
-        <title>{% block title %}SiegeCraft{% endblock %}</title>
+        <title>{% block title %}{{ 'siegecraft.title'|trans({}, 'TSSiegeCraftBundle') }}{% endblock %}</title>
         {% block stylesheets %}
             <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
@@ -15,7 +15,10 @@
         <link rel="icon" type="image/x-icon" href="{{ asset('favicon.ico') }}" />
     </head>
     <body>
-        {% block body %}{% endblock %}
+        <div class="container">
+            <h1>{{ 'siegecraft.title'|trans({}, 'TSSiegeCraftBundle') }}</h1>
+            {% block body %}{% endblock %}
+        </div>
         {% block javascripts %}
             <script src="//ajax.googleapis.com/ajax/libs/jquery/1.9.1/jquery.min.js"></script>
             <script>window.jQuery || document.write('<script src="{{ asset('js/jquery.js') }}"><\/script>')</script>
