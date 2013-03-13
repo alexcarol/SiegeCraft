@@ -20,9 +20,10 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
+            new Braincrafted\BootstrapBundle\BraincraftedBootstrapBundle(),
             new TS\Bundle\SiegeCraftBundle\TSSiegeCraftBundle(),
             new TS\Bundle\GameConfigBundle\TSGameConfigBundle(),
-            new TS\Bundle\UserBundle\TSUserBundle(),
+            new TS\Bundle\UserBundle\TSUserBundle()
         );
 
         if (in_array($this->getEnvironment(), array('dev', 'test'))) {
