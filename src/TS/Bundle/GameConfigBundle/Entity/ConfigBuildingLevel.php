@@ -7,7 +7,7 @@ use Doctrine\ORM\Mapping as ORM;
 /**
  * ConfigBuildingLevel
  *
- * @ORM\Table()
+ * @ORM\Table(name="ConfigBuildingLevel", uniqueConstraints={@ORM\UniqueConstraint(name="ConfigBuildingLevel_AK", columns={"level", "configBuilding_id"})})
  * @ORM\Entity
  */
 class ConfigBuildingLevel
@@ -72,7 +72,7 @@ class ConfigBuildingLevel
 
     public function __toString()
     {
-        return $this->id . ' : ' . $this->name;
+        return $this->configBuilding . ' level ' . $this->level;
     }
 
     /**
