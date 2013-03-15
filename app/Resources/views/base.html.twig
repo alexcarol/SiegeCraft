@@ -16,7 +16,12 @@
     </head>
     <body>
         <div class="container">
-            <h1>{{ 'siegecraft.title'|trans({}, 'TSSiegeCraftBundle') }}</h1>
+            <div class="navbar">
+                <div class="navbar-inner">
+                    <a class="brand" href="#">{{ 'siegecraft.title'|trans({}, 'TSSiegeCraftBundle') }}</a>
+                    {% block navbar %}{% endblock %}
+                </div>
+            </div>
             {% block body %}{% endblock %}
         </div>
         {% block javascripts %}
