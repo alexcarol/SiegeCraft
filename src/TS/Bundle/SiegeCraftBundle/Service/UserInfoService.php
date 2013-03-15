@@ -10,6 +10,11 @@ class UserInfoService {
      */
     public function getUserTabs($userId)
     {
-        return array('Tab A', 'Tab B');
+        return array(
+            'Fortress',
+            'Resources',
+            'Observatory',
+            'Buildings'
+        );
     }
 }
