@@ -1,3 +1,8 @@
+#game {
+    height: 500px;
+    border: 1px dotted grey;
+}
+
 .center {
     float: none;
     margin-left: auto;

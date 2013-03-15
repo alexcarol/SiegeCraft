@@ -1,16 +1,25 @@
-{% extends "::base.html.twig" %}
+{% extends "TSUserBundle::layout.html.twig" %}
 
-{% block body %}
+{% block fos_user_content %}
 
-Tabs :
-<ul>
-{% for tab in tabs %}
-    <li>{{ tab }}</li>
-{% endfor %}
-</ul>
+<div class="row">
+    <div class="span3">
+        <ul class="nav nav-tabs nav-stacked">
+        {% for tab in tabs %}
+            <li><a href="#">{{ tab }}</a></li>
+        {% endfor %}
+        </ul>
+    </div>
+    <div class="span9">
+        <div id="game"></div>
+    </div>
+</div>
+
+<!--
 <ul>
 {% for amount, resource in player.resources %}
     <li>{{ resource }} : {{ amount }}</li>
 {% endfor %}
 </ul>
+-->
 {% endblock %}
