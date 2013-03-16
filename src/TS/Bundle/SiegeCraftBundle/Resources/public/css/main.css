@@ -8,3 +8,12 @@
     margin-left: auto;
     margin-right: auto;
 }
+
+.center-text {
+    text-align: center;
+}
+
+.copyright {
+    font-size: 0.8em;
+    color: grey;
+}
