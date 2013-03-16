@@ -16,7 +16,7 @@ class DefaultController extends Controller
     {
         $userId = $this->getUser()->getId();
         $tabs = $this->container->get('siege_craft.service.player_info')->getTabs($userId);
-        $resources = $this->container->get('siege_craft.service.player_info')->getResources($userId);;
+        $resources = $this->container->get('siege_craft.service.player_info')->getResources($userId);
         $data = array();
         $buildings = array();
         $technologies = array();
@@ -44,7 +44,8 @@ class DefaultController extends Controller
      */
     public function fortressAction()
     {
-        $nodes = array();
+        $userId = getUser()->getId();
+        $nodes = container->get('siege_craft.service.player_info')->getNodes($userId);;
 
         return array(
             'nodes' => $nodes

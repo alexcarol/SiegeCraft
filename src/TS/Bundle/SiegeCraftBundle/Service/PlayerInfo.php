@@ -33,4 +33,11 @@ class PlayerInfo
 
         return $player->getResources();
     }
+    
+    public function getNodes($userId)
+    {
+        $player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
+        $fortress = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByPlayer($player);
+        return $fortress->getNodes();
+    }
 }
