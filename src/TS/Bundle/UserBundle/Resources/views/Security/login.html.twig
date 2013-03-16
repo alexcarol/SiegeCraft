@@ -23,7 +23,7 @@
                 <div>{{ error|trans({}, 'FOSUserBundle') }}</div>
             {% endif %}
 
-            <div class="span7 center">
+            <div class="span6 center">
                 <form class="form-horizontal" action="{{ path("fos_user_security_check") }}" method="post">
                     <fieldset>
                         <legend>Login</legend>
@@ -51,6 +51,13 @@
                                 </label>
                                 <button type="submit" class="btn" id="_submit" name="_submit">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
                             </div>
+                        </div>
+
+                        <div class="text-center">
+                            <a href="{{ path('fos_user_resetting_request') }}">{{ 'layout.forgot-password'|trans({}, 'FOSUserBundle') }}</a>
+                        </div>
+                        <div class="text-center">
+                            <a href="{{ path('fos_user_registration_register') }}">{{ 'layout.register'|trans({}, 'FOSUserBundle') }}</a>
                         </div>
                     </fieldset>
                 </form>
