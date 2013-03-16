@@ -5,9 +5,9 @@
 <div class="row">
     <div class="span3">
         <ul id="resources">
-            <li class="resource platinum">100</li>
-            <li class="resource quartz">10230</li>
-            <li class="resource antimatter">20</li>
+            {% for resource, amount in player.resources %}
+            <li class="resource resource-{{ resource }}">{{ amount }}</li>
+            {% endfor %}
         </ul>
         <ul class="nav nav-tabs nav-stacked">
         {% for tab in tabs %}
@@ -21,11 +21,4 @@
     </div>
 </div>
 
-<!--
-<ul>
-{% for amount, resource in player.resources %}
-    <li>{{ resource }} : {{ amount }}</li>
-{% endfor %}
-</ul>
--->
 {% endblock %}

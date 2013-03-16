@@ -21,17 +21,17 @@
     background-repeat: no-repeat;
 }
 
-.resource.platinum {
+.resource.resource-p {
     background-image: url('../img/resources/p_small.png');
     color: #2d6987;
 }
 
-.resource.quartz {
+.resource.resource-q {
     background-image: url('../img/resources/q_small.png');
     color: #953b39;
 }
 
-.resource.antimatter {
+.resource.resource-a {
     background-image: url('../img/resources/a_small.png');
     color: #000000;
 }
