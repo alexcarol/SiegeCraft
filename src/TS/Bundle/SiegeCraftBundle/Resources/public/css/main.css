@@ -3,6 +3,39 @@
     border: 1px dotted grey;
 }
 
+#resources {
+    display: block;
+    list-style: none;
+    line-height: 20px;
+    padding: 8px 12px;
+    margin-left: 0px;
+    border-radius: 4px;
+    border: 1px solid #ddd;
+}
+
+.resource {
+    display: inline;
+    padding-left: 20px;
+    margin-right: 10px;
+    font-weight: bold;
+    background-repeat: no-repeat;
+}
+
+.resource.platinum {
+    background-image: url('../img/resources/p_small.png');
+    color: #2d6987;
+}
+
+.resource.quartz {
+    background-image: url('../img/resources/q_small.png');
+    color: #953b39;
+}
+
+.resource.antimatter {
+    background-image: url('../img/resources/a_small.png');
+    color: #000000;
+}
+
 .center {
     float: none;
     margin-left: auto;
