@@ -3,6 +3,7 @@
 namespace TS\Bundle\GameConfigBundle\Entity;
 
 use Doctrine\ORM\Mapping as ORM;
+use Gedmo\Mapping\Annotation as Gedmo;
 
 /**
  * ConfigUnit
@@ -26,6 +27,7 @@ class ConfigUnit
     /**
      * @var string
      *
+     * @ORM\Translatable;
      * @ORM\Column(name="name", type="string", length=255, unique=true)
      */
     private $name;
@@ -33,6 +35,7 @@ class ConfigUnit
     /**
      * @var string
      *
+     * @ORM\Translatable;
      * @ORM\Column(name="description", type="text")
      */
     private $description;
