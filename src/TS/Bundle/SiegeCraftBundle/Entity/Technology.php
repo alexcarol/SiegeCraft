@@ -5,12 +5,12 @@ namespace TS\Bundle\SiegeCraftBundle\Entity;
 use Doctrine\ORM\Mapping as ORM;
 
 /**
- * Unit
+ * Technology
  *
  * @ORM\Table()
  * @ORM\Entity
  */
-class Unit
+class Technology
 {
     /**
      * @var integer
@@ -29,27 +29,26 @@ class Unit
     private $configId;
 
     /**
-     * @var boolean
+     * @var integer
      *
-     * @ORM\Column(name="idle", type="boolean")
+     * @ORM\Column(name="level", type="smallint")
      */
-    private $idle = false;
+    private $level = 1;
 
     /**
-     * @ORM\ManyToOne(targetEntity="Node", inversedBy="units")
-     */
-    private $node;
-
-    /**
-     * @ORM\ManyToOne(targetEntity="Player", inversedBy="units")
+     * @var Player
+     *
+     * @ORM\ManyToOne(targetEntity="Player")
      * @ORM\JoinColumn(name="player_id", referencedColumnName="user_id")
      */
     private $player;
 
+
+
     /**
      * Get id
      *
-     * @return integer 
+     * @return integer
      */
     public function getId()
     {
@@ -60,19 +59,19 @@ class Unit
      * Set configId
      *
      * @param integer $configId
-     * @return Unit
+     * @return Technology
      */
     public function setConfigId($configId)
     {
         $this->configId = $configId;
-    
+
         return $this;
     }
 
     /**
      * Get configId
      *
-     * @return integer 
+     * @return integer
      */
     public function getConfigId()
     {
@@ -80,56 +79,33 @@ class Unit
     }
 
     /**
-     * Set idle
+     * Set level
      *
-     * @param boolean $idle
-     * @return Unit
+     * @param integer $level
+     * @return Technology
      */
-    public function setIdle($idle)
+    public function setLevel($level)
     {
-        $this->idle = $idle;
-    
+        $this->level = $level;
+
         return $this;
     }
 
     /**
-     * Get idle
+     * Get level
      *
-     * @return boolean 
+     * @return integer
      */
-    public function getIdle()
+    public function getLevel()
     {
-        return $this->idle;
-    }
-
-    /**
-     * Set node
-     *
-     * @param Node $node
-     * @return Unit
-     */
-    public function setNode(Node $node = null)
-    {
-        $this->node = $node;
-    
-        return $this;
-    }
-
-    /**
-     * Get node
-     *
-     * @return Node
-     */
-    public function getNode()
-    {
-        return $this->node;
+        return $this->level;
     }
 
     /**
      * Set player
      *
      * @param Player $player
-     * @return Unit
+     * @return Technology
      */
     public function setPlayer(Player $player = null)
     {
