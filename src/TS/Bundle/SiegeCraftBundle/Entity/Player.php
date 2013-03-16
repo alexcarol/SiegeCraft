@@ -12,8 +12,6 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Player
 {
-    use Traits\Resources;
-
     /**
      * @var integer
      *
@@ -36,6 +34,11 @@ class Player
      * @ORM\Column(name="name", type="string", length=255)
      */
     private $name;
+
+    /**
+     * @ORM\Column(name="resources", type="array")
+     */
+    private $resources;
 
     /**
      *
@@ -112,6 +115,39 @@ class Player
     }
 
     /**
+     * Add resources
+     *
+     * @param Resource $resources
+     * @return Player
+     */
+    public function addResource(Resource $resources)
+    {
+        $this->resources[] = $resources;
+
+        return $this;
+    }
+
+    /**
+     * Remove resources
+     *
+     * @param Resource $resources
+     */
+    public function removeResource(Resource $resources)
+    {
+        $this->resources->removeElement($resources);
+    }
+
+    /**
+     * Get resources
+     *
+     * @return \Doctrine\Common\Collections\Collection
+     */
+    public function getResources()
+    {
+        return $this->resources;
+    }
+
+    /**
      * Add units
      *
      * @param Unit $units
@@ -142,6 +178,19 @@ class Player
     public function getUnits()
     {
         return $this->units;
+    }
+
+    /**
+     * Set resources
+     *
+     * @param array $resources
+     * @return Player
+     */
+    public function setResources($resources)
+    {
+        $this->resources = $resources;
+
+        return $this;
     }
 
     /**
