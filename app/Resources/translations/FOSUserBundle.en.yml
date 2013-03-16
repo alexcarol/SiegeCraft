@@ -4,3 +4,9 @@ security:
         password: "Password:"
         remember_me: Remember me
         submit: Login
+
+layout:
+    forgot-password: 'Forgot your password?'
+
+resetting:
+    title: 'Reset password'
