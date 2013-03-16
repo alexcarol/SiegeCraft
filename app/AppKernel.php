@@ -21,6 +21,7 @@ class AppKernel extends Kernel
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
             new Braincrafted\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new TS\Bundle\SiegeCraftBundle\TSSiegeCraftBundle(),
             new TS\Bundle\GameConfigBundle\TSGameConfigBundle(),
             new TS\Bundle\UserBundle\TSUserBundle()
