@@ -22,12 +22,12 @@ class Region
 
     /**
      * @var Fortress
-     * @ORM\Id
      * @ORM\OneToOne(targetEntity="Fortress")
      */
     private $fortress;
 
     /**
+     * @ORM\Id
      * @ORM\ManyToOne(targetEntity="Zone", inversedBy="regions")
      */
     private $zone;
