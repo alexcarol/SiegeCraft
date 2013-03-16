@@ -28,7 +28,7 @@ class Region
 
     /**
      * @ORM\Id
-     * @ORM\ManyToOne(targetEntity="Zone", inversedBy="regions")
+     * @ORM\ManyToOne(targetEntity="Zone", inversedBy="regions", cascade={"persist"})
      */
     private $zone;
 

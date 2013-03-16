@@ -13,15 +13,22 @@ class LoadMap implements FixtureInterface {
      */
     public function load(ObjectManager $manager)
     {
-        $zone = new Zone();
+        $zones = array();
 
-        $manager->persist($zone);
+        for ($j = 0; $j < 500; ++$j) {
+            $zone = new Zone();
+            $manager->persist($zone);
+            $zones[] = $zone;
+        }
 
         $manager->flush();
 
-        for ($i = 0; $i < 9; ++$i) {
-            $region = (new Region())->setId($i)->setZone($zone);
-            $zone->addRegion($region);
+        foreach ($zones as $zone) {
+            for ($i = 0; $i < 9; ++$i) {
+                $region = (new Region())->setId($i)->setZone($zone);
+                $zone->addRegion($region);
+                $manager->persist($region);
+            }
         }
 
         $manager->flush();

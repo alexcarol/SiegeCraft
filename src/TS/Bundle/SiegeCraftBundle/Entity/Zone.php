@@ -22,7 +22,7 @@ class Zone
     private $id;
 
     /**
-     * @ORM\OneToMany(targetEntity="Region", mappedBy="zone",cascade={"persist"})
+     * @ORM\OneToMany(targetEntity="Region", mappedBy="zone")
      */
     private $regions;
 
