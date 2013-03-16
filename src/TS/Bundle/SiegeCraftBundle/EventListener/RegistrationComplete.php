@@ -44,8 +44,6 @@ class RegistrationComplete implements EventSubscriberInterface {
 
     public function onRegistrationComplete(FilterUserResponseEvent $event)
     {
-        //$this->em->getRepository('TSSiegeCraftBundle:Region')->findBy
-
         $player = new Player();
 
         $fortress = new Fortress();
@@ -69,5 +67,7 @@ class RegistrationComplete implements EventSubscriberInterface {
         $this->em->persist($player);
 
         $this->em->flush();
+
+        $this->em->getRepository('TSSiegeCraftBundle:Region')->assignRegion($fortress->getId());
     }
 }
