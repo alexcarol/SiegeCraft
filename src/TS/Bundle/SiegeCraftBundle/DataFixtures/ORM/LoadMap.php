@@ -24,7 +24,6 @@ class LoadMap implements FixtureInterface {
             $zone->addRegion($region);
         }
 
-
         $manager->flush();
     }
 }

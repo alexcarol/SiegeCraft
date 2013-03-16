@@ -39,6 +39,7 @@ class Technology
      * @var Player
      *
      * @ORM\ManyToOne(targetEntity="Player")
+     * @ORM\JoinColumn(name="player_id", referencedColumnName="user_id")
      */
     private $player;
 

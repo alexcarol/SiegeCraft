@@ -12,39 +12,26 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Player
 {
-    /**
-     * @var integer
-     *
-     * @ORM\Column(name="id", type="integer")
-     * @ORM\Id
-     * @ORM\GeneratedValue(strategy="AUTO")
-     */
-    private $id;
-
+    use Traits\Resources;
     /**
      * @var User
-     *
-     * @ORM\OneToOne(targetEntity="\TS\Bundle\UserBundle\Entity\User", inversedBy="player")
+     * @ORM\Id
+     * @ORM\OneToOne(targetEntity="\TS\Bundle\UserBundle\Entity\User")
      */
     private $user;
-
-    /**
-     * @var string
-     *
-     * @ORM\Column(name="name", type="string", length=255)
-     */
-    private $name;
-
-    /**
-     * @ORM\Column(name="resources", type="array")
-     */
-    private $resources;
 
     /**
      *
      * @ORM\OneToOne(targetEntity="Fortress", inversedBy="player")
      */
     private $fortress;
+
+    /**
+     * @var array
+     * TODO create technologies
+     * ORM\Column(name="technologies", type="")
+     */
+    private $technologies = array();
 
     /**
      * @ORM\OneToMany(targetEntity="Unit", mappedBy="player")
@@ -62,33 +49,17 @@ class Player
     }
 
     /**
-     * Set name
-     *
-     * @param string $name
-     * @return Player
-     */
-    public function setName($name)
-    {
-        $this->name = $name;
-
-        return $this;
-    }
-
-    /**
-     * Get name
-     *
-     * @return string
-     */
-    public function getName()
-    {
-        return $this->name;
-    }
-    /**
      * Constructor
      */
     public function __construct()
     {
         $this->units = new \Doctrine\Common\Collections\ArrayCollection();
+        //$this->technologies = new \Doctrine\Common\Collections\ArrayCollection();
+        $this->resources = array(
+            'p' => 100,
+            'q' => 100,
+            'a' => 100,
+        );
     }
 
     /**
@@ -181,19 +152,6 @@ class Player
     }
 
     /**
-     * Set resources
-     *
-     * @param array $resources
-     * @return Player
-     */
-    public function setResources($resources)
-    {
-        $this->resources = $resources;
-
-        return $this;
-    }
-
-    /**
      * Set user
      *
      * @param \TS\Bundle\UserBundle\Entity\User $user
@@ -214,5 +172,23 @@ class Player
     public function getUser()
     {
         return $this->user;
+    }
+
+
+    public function setTechnologies($technologies)
+    {
+        $this->technologies = $technologies;
+
+        return $this;
+    }
+
+    /**
+     * Get technologies
+     *
+     * @return array
+     */
+    public function getTechnologies()
+    {
+        return $this->technologies;
     }
 }
