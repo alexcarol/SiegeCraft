@@ -23,7 +23,15 @@ class PlayerInfo
             'Fortress',
             'Resources',
             'Observatory',
-            'Buildings'
+            'Buildings',
+            'Cyberlab',
+            'Neo Training',
+            'Technopub',
+            'Boss Nests',
+            'Commandment',
+            'Neo Bazaar',
+            'Prison',
+            'Terra Chapel'
         );
     }
 
@@ -37,7 +45,7 @@ class PlayerInfo
     public function getNodes($userId)
     {
         $player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
-        $fortress = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByPlayer($player);
+        $fortress = $player->getFortress();
         return $fortress->getNodes();
     }
 }

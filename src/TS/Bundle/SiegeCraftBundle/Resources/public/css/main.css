@@ -1,6 +1,10 @@
-#game {
+#main {
     height: 500px;
     border: 1px dotted grey;
+}
+
+#info {
+
 }
 
 #resources {
@@ -8,7 +12,7 @@
     list-style: none;
     line-height: 20px;
     padding: 8px 12px;
-    margin-left: 0px;
+    margin-left: 0;
     border-radius: 4px;
     border: 1px solid #ddd;
 }
