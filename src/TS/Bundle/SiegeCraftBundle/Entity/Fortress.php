@@ -33,15 +33,7 @@ class Fortress
      *
      * @ORM\Column(name="description", type="text")
      */
-    private $description;
-
-    /**
-     * @var array
-     *
-     * @ORM\Column(name="technologies", type="simple_array")
-     */
-    private $technologies = array();
-
+    private $description = '';
 
     /**
      * @var Building
@@ -127,28 +119,6 @@ class Fortress
         return $this->description;
     }
 
-    /**
-     * Set technologies
-     *
-     * @param array $technologies
-     * @return Fortress
-     */
-    public function setTechnologies($technologies)
-    {
-        $this->technologies = $technologies;
-    
-        return $this;
-    }
-
-    /**
-     * Get technologies
-     *
-     * @return array 
-     */
-    public function getTechnologies()
-    {
-        return $this->technologies;
-    }
     /**
      * Constructor
      */

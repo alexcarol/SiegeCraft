@@ -42,6 +42,7 @@ class Unit
 
     /**
      * @ORM\ManyToOne(targetEntity="Player", inversedBy="units")
+     * @ORM\JoinColumn(name="player_id", referencedColumnName="user_id")
      */
     private $player;
 
