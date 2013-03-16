@@ -8,8 +8,9 @@ trait Resources {
      * @ORM\Column(name="resources", type="json_array")
      */
     private $resources = array(
-        'g' => 0,
-        'e' => 0,
+        'p' => 0,
+        'q' => 0,
+        'a' => 0,
     );
 
     /**
@@ -38,33 +39,48 @@ trait Resources {
     /**
      * @return int
      */
-    public function getGoldResource()
+    public function getPlatinumResource()
     {
-        return $this->resources['g'];
+        return $this->resources['p'];
     }
 
     /**
      * @param int $resource
      */
-    public function setGoldResource($resource)
+    public function setPlatinumResource($resource)
     {
-        $this->resources['g'] = $resource;
+        $this->resources['p'] = $resource;
     }
 
     /**
      * @return int
      */
-    public function getEnergyResource()
+    public function getQuartzResource()
     {
-        return $this->resources['e'];
+        return $this->resources['q'];
     }
 
     /**
      * @param int $resource
      */
-    public function setEnergyResource($resource)
+    public function setQuartzResource($resource)
     {
-        $this->resources['e'] = $resource;
+        $this->resources['q'] = $resource;
     }
 
+    /**
+     * @return int
+     */
+    public function getAntimatterResource()
+    {
+        return $this->resources['a'];
+    }
+
+    /**
+     * @param int $resource
+     */
+    public function setAntimatterResource($resource)
+    {
+        $this->resources['a'] = $resource;
+    }
 }
