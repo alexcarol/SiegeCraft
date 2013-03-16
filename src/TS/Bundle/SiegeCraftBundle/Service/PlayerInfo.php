@@ -26,9 +26,9 @@ class PlayerInfo
     }
     
     public function getResources($userId){
-    
-	$player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser();
 
+
+	$player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
 
 	return $player->getResources();
     
