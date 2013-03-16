@@ -16,7 +16,7 @@ class Player
     /**
      * @var User
      * @ORM\Id
-     * @ORM\OneToOne(targetEntity="\TS\Bundle\UserBundle\Entity\User")
+     * @ORM\OneToOne(targetEntity="\TS\Bundle\UserBundle\Entity\User", inversedBy="player")
      */
     private $user;
 

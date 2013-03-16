@@ -38,7 +38,7 @@ class Building
     /**
      * @var Fortress
      *
-     * @ORM\ManyToOne(targetEntity="Fortress")
+     * @ORM\ManyToOne(targetEntity="Fortress", inversedBy="buildings")
      */
     private $fortress;
 
