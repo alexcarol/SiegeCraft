@@ -1,0 +1,11 @@
+<div class="span6 center">
+    <form action="{{ path('fos_user_registration_register') }}" {{ form_enctype(form) }} method="POST" class="fos_user_registration_register">
+        <fieldset>
+            <legend>Register</legend>
+            {{ form_widget(form) }}
+            <div>
+                <input class="control" type="submit" value="{{ 'registration.submit'|trans({}, 'FOSUserBundle') }}" />
+            </div>
+        </fieldset>
+    </form>
+</div>
