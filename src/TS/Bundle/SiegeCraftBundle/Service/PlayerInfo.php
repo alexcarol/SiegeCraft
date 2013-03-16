@@ -6,11 +6,13 @@ use Doctrine\ORM\EntityManager;
 
 class PlayerInfo
 {
-  private $em;
+    private $em;
 
-  public function __construct(EntityManager $em){
-    $this->em = $em;
-  }
+    public function __construct(EntityManager $em)
+    {
+        $this->em = $em;
+    }
+
     /**
      * @param $userId
      * @return array
@@ -24,13 +26,14 @@ class PlayerInfo
             'Buildings'
         );
     }
-    
-    public function getResources($userId){
+
+    public function getResources($userId)
+    {
 
 
-	$player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
+        $player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
 
-	return $player->getResources();
-    
+        return $player->getResources();
+
     }
 }
