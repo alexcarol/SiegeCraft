@@ -42,6 +42,7 @@ assetic:
         lessphp:
             file: %kernel.root_dir%/../vendor/leafo/lessphp/lessc.inc.php
             apply_to: "\.less$"
+            preserve_comments: false
     assets:
         bootstrap_css:
             inputs:

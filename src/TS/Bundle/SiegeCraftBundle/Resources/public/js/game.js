@@ -19,7 +19,8 @@ function renderSection(section) {
     switch (section) {
         case FORTRESS:
             $.getJSON('/' + section, function (contents) {
-                renderFortress(contents);
+                renderFortress(contents.nodes);
+                info.html(contents.info);
             });
             break;
         default:

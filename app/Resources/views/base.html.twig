@@ -7,8 +7,9 @@
             <link rel="stylesheet" href="{{ asset('css/bootstrap.css') }}">
 
             {% stylesheets output='bundles/tssiegecraft/css/siegecraft.css' filter='?yui_css'
-                '@TSSiegeCraftBundle/Resources/public/css/main.css'
-            %}
+                '@TSSiegeCraftBundle/Resources/public/less/siegecraft.less'
+                '@TSSiegeCraftBundle/Resources/public/less/*'
+            %} {# TODO: remove  #}
             <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="screen" />
             {% endstylesheets %}
         {% endblock %}
