@@ -56,7 +56,12 @@ class DefaultController extends Controller
             ];
         }
 
-        return new JsonResponse($nodesArray);
+        $response = [
+            'nodes' => $nodesArray,
+            'info'  => $this->renderView('TSSiegeCraftBundle:json:fortress.html.twig')
+        ];
+
+        return new JsonResponse($response);
     }
 
     /**

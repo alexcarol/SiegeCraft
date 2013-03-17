@@ -19,7 +19,12 @@ function renderSection(section) {
     switch (section) {
         case FORTRESS:
             $.getJSON('/' + section, function (contents) {
-                renderFortress(contents);
+                renderFortress(contents.nodes);
+                info.html(contents.info);
+
+                $('.node').bind('click', function () {
+                    $('#nodeInfo').html('Node ' + $(this).data('id'));
+                });
             });
             break;
         default:
@@ -49,10 +54,9 @@ FortressDrawer.prototype = {
     _tileSize: 70,
     _padding: 10,
     _borderStyle: '1px solid #222',
-    _backgroundColor: '#555',
 
     circle: function (id, x, y) {
-        var c = $('<div data-original-title="Node ' + id + '"></div>');
+        var c = $('<div class="node" data-id="' + id + '" data-original-title="Node ' + id + '"></div>');
 
         c.css({
             position: 'absolute',
@@ -60,7 +64,6 @@ FortressDrawer.prototype = {
             top: this._offset.y - this._tileSize / 2 + y * (this._tileSize + this._padding) + 'px',
             border: this._borderStyle,
             'border-radius': this._tileSize / 2,
-            'background-color': this._backgroundColor,
             width: this._tileSize + 'px',
             height: this._tileSize + 'px'
         });
