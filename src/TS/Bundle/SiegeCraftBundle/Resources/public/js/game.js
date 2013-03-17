@@ -23,7 +23,7 @@ function renderSection(section) {
             });
             break;
         default:
-            main.append('<div class="text-center">' + section + '</div>');
+            main.append('<div class="text-center">' + section.charAt(0).toUpperCase() + section.slice(1) + '</div>');
             break;
     }
 
