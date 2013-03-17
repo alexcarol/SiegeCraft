@@ -9,7 +9,7 @@
             {% stylesheets output='bundles/tssiegecraft/css/siegecraft.css' filter='?yui_css'
                 '@TSSiegeCraftBundle/Resources/public/less/siegecraft.less'
                 '@TSSiegeCraftBundle/Resources/public/less/*'
-            %} {# TODO: remove * for prod (can we do this only for dev somehow?) #}
+            %}
             <link href="{{ asset_url }}" rel="stylesheet" type="text/css" media="screen" />
             {% endstylesheets %}
         {% endblock %}
