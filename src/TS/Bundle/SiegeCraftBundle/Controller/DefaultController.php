@@ -5,6 +5,7 @@ namespace TS\Bundle\SiegeCraftBundle\Controller;
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
+use Symfony\Component\HttpFoundation\JsonResponse;
 
 class DefaultController extends Controller
 {
@@ -40,16 +41,22 @@ class DefaultController extends Controller
 
     /**
      * @Route("/fortress")
-     * @Template()
      */
     public function fortressAction()
     {
         $userId = $this->getUser()->getId();
         $nodes = $this->container->get('siege_craft.service.player_info')->getNodes($userId);
 
-        return array(
-            'nodes' => $nodes
-        );
+        $nodesArray = array();
+        foreach ($nodes as $node) {
+            $nodesArray[] = [
+                'id' => $node->getId(),
+                'x'  => $node->getPosX(),
+                'y'  => $node->getPosY()
+            ];
+        }
+
+        return new JsonResponse($nodesArray);
     }
 
     /**
