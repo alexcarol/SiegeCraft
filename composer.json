@@ -35,7 +35,7 @@
         "braincrafted/bootstrap-bundle": "dev-master",
         "twitter/bootstrap": "2.3.*",
         "jquery/jquery": "1.9.*",
-        "leafo/lessphp": "0.3.*",
+        "leafo/lessphp": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
         "stof/doctrine-extensions-bundle": "dev-master"
     },
