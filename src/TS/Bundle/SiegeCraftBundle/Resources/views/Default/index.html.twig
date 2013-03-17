@@ -14,7 +14,7 @@
 
 <div class="row">
     <div class="span3">
-        <ul id="resources">
+        <ul id="resources" class="round-box">
             {% for resource, amount in player.resources %}
             <li class="resource resource-{{ resource }}">{{ amount }}</li>
             {% endfor %}
