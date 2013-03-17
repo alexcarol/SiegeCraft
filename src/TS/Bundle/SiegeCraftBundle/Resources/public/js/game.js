@@ -40,7 +40,7 @@ function renderFortress(data) {
     }
 }
 
-function FortressDrawer() {}
+FortressDrawer = function () {};
 FortressDrawer.prototype = {
     _offset: {
         x: main.width() / 2,
@@ -52,7 +52,7 @@ FortressDrawer.prototype = {
     _backgroundColor: '#555',
 
     circle: function (id, x, y) {
-        var c = $('<div></div>');
+        var c = $('<div data-original-title="Node ' + id + '"></div>');
 
         c.css({
             position: 'absolute',
@@ -64,6 +64,7 @@ FortressDrawer.prototype = {
             width: this._tileSize + 'px',
             height: this._tileSize + 'px'
         });
+        c.tooltip();
 
         main.append(c);
     }
