@@ -269,26 +269,26 @@ class ConfigUnit
     }
 
     /**
-     * Add requiredTechnologies
+     * Add requiredTechnology
      *
-     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnology
      * @return ConfigUnit
      */
-    public function addRequiredTechnologie(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie)
+    public function addRequiredTechnology(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnology)
     {
-        $this->requiredTechnologies[] = $requiredTechnologie;
+        $this->requiredTechnologies[] = $requiredTechnology;
 
         return $this;
     }
 
     /**
-     * Remove requiredTechnologies
+     * Remove requiredTechnology
      *
-     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie
+     * @param \TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnology
      */
-    public function removeRequiredTechnologie(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnologie)
+    public function removeRequiredTechnology(\TS\Bundle\GameConfigBundle\Entity\ConfigTechnologyLevel $requiredTechnology)
     {
-        $this->requiredTechnologies->removeElement($requiredTechnologie);
+        $this->requiredTechnologies->removeElement($requiredTechnology);
     }
 
     /**
