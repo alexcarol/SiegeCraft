@@ -16,6 +16,7 @@ $(document).ready(function () {
 
 function renderSection(section) {
     main.html('');
+    info.html('');
 
     switch (section) {
         case FORTRESS:
