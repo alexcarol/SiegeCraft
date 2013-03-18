@@ -4,6 +4,7 @@ namespace TS\Bundle\SiegeCraftBundle\Controller;
 
 use Symfony\Bundle\FrameworkBundle\Controller\Controller;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
+use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\JsonResponse;
 
@@ -41,6 +42,7 @@ class DefaultController extends Controller
 
     /**
      * @Route("/fortress")
+     * @Method({"GET"})
      */
     public function fortressAction()
     {
@@ -66,66 +68,65 @@ class DefaultController extends Controller
     }
 
     /**
-     * @Route("/fortress/node")
+     * Each of the nodes will have different information depending on the type
+     * so there should be a kind of input saying the position of the node asked for
+     * and also a service for looking up what kind of node it is.
+     *
+     * @Route("/fortress/node/{nodeId}", requirements={"nodeId" = "\d+"})
      * @Template()
      */
-    public function fortressNodeAction()
+    public function fortressNodeAction($nodeId)
     {
-        $units = array();
-        /*
-         * Each of the nodes will have different information depending on the type
-         * so there should be a kind of input saying the position of the node asked for
-         * and also a service for looking up what kind of node it is.
-         */
+        $userId = $this->getUser()->getId();
+        $node = $this->container->get('siege_craft.service.player_info')->getNode($userId, $nodeId);
 
         return array(
-            'units' => $units
+            'units' => $node->units
         );
     }
 
     /**
+     * Information about the mines of the player
+     *
      * @Route("/resources")
      * @Template()
      */
     public function resourcesAction()
     {
         $mines = array();
-        /*
-         * Each of the mines of the player
-         */
 
         return array(
             'mines' => $mines
         );
     }
 
-
     /**
+     * Returns all the regions of a section of the map (must get the section from GET)
+     *
      * @Route("/observatory")
      * @Template()
      */
     public function observatoryAction()
     {
         $regions = array();
-        /*
-        * Returns all the regions of a section of the map (must get the section from GET)
-        */
+
         return array(
             'regions' => $regions
         );
     }
 
     /**
-     * @Route("/observatory/exploration")
+     * Sends the information of an explored node (A message with information)
+     * and updates the number of explorations left.
+     *
+     * @Route("/observatory/explore/{idNode}", requirements={"idNode" = "\d+"})
+     * @Method({"POST"})
      * @Template()
      */
-    public function observatoryExplorationAction()
+    public function observatoryExploreAction($idNode)
     {
         $information = array();
-        /*
-         * Sends the information of an explored node (A message with information)
-         * and actualizes the number of explorations left.
-         */
+
         return array(
             'information' => $information
         );
