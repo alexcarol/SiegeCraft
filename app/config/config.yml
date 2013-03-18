@@ -1,6 +1,7 @@
 imports:
     - { resource: parameters.yml }
     - { resource: security.yml }
+    - { resource: tabs.yml }
 
 framework:
     #esi:             ~
@@ -114,7 +115,3 @@ fos_user:
     db_driver: orm
     firewall_name: main
     user_class: TS\Bundle\UserBundle\Entity\User
-
-ts_siege_craft:
-    tabs:
-        Fortress: true
