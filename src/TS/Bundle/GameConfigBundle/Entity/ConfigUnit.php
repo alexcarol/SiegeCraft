@@ -27,7 +27,7 @@ class ConfigUnit
     /**
      * @var string
      *
-     * @ORM\Translatable;
+     * @Gedmo\Translatable;
      * @ORM\Column(name="name", type="string", length=255, unique=true)
      */
     private $name;
@@ -35,7 +35,7 @@ class ConfigUnit
     /**
      * @var string
      *
-     * @ORM\Translatable;
+     * @Gedmo\Translatable;
      * @ORM\Column(name="description", type="text")
      */
     private $description;

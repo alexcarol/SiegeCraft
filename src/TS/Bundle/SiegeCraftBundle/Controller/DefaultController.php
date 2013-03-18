@@ -50,9 +50,10 @@ class DefaultController extends Controller
         $nodesArray = array();
         foreach ($nodes as $node) {
             $nodesArray[] = [
-                'id' => $node->getId(),
-                'x'  => $node->getPosX(),
-                'y'  => $node->getPosY()
+                'id'    => $node->getId(),
+                'x'     => $node->getPosX(),
+                'y'     => $node->getPosY(),
+                'units' => $node->getUnits()
             ];
         }
 

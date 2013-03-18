@@ -3,7 +3,8 @@ const FORTRESS = 'fortress';
 var main = $('#main'),
     info = $('#info'),
     menu = $('#menu'),
-    currentSection = FORTRESS;
+    currentSection = FORTRESS,
+    nodes = { units: null };
 
 $(document).ready(function () {
     renderSection(currentSection);
@@ -19,11 +20,13 @@ function renderSection(section) {
     switch (section) {
         case FORTRESS:
             $.getJSON('/' + section, function (contents) {
+                nodes = contents.nodes;
                 renderFortress(contents.nodes);
                 info.html(contents.info);
 
                 $('.node').bind('click', function () {
                     $('#nodeInfo').html('Node ' + $(this).data('id'));
+                    //$('#nodeUnits').html(nodes.units); <- we should load units info here
                 });
             });
             break;
