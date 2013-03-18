@@ -22,11 +22,31 @@ function renderSection(section) {
             $.getJSON('/' + section, function (contents) {
                 nodes = contents.nodes;
                 renderFortress(contents.nodes);
-                info.html(contents.info);
 
                 $('.node').bind('click', function () {
                     $('#nodeInfo').html('Node ' + $(this).data('id'));
                     //$('#nodeUnits').html(nodes.units); <- we should load units info here
+                });
+
+                info.html(contents.info);
+
+                $('a', '#nodeActions').bind('click', function () {
+                    var self = $(this);
+
+                    switch (self.data('action')) {
+                        case 'conquer':
+                            self.html('Abandon');
+                            self.data('action', 'abandon');
+                            break;
+                        case 'abandon':
+                            self.html('Conquer');
+                            self.data('action', 'conquer');
+                            break;
+                    }
+
+                    self.toggleClass('btn-success btn-danger');
+
+                    return false;
                 });
             });
             break;
