@@ -78,4 +78,15 @@ class PlayerInfo
 
         throw new \InvalidArgumentException('Node with id ' . $nodeId . ' doesn\'t exist.');
     }
+
+    /**
+     * @param int $userId
+     */
+    public function getBuildings($userId)
+    {
+        $player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
+        $fortress = $player->getFortress();
+
+        return $fortress->getBuildings();
+    }
 }
