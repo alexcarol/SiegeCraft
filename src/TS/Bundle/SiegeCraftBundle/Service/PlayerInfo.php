@@ -7,34 +7,37 @@ use Doctrine\ORM\EntityManager;
 
 class PlayerInfo
 {
+    /**
+     * @var EntityManager
+     */
     private $em;
 
-    public function __construct(EntityManager $em)
+    private $tabs;
+
+    public function __construct(EntityManager $em, $tabs)
     {
         $this->em = $em;
+        $this->tabs = $tabs;
     }
 
     /**
-     * @todo get actual user tabs
+     * @todo building logic to find which extra tabs should be activated
      * @param $userId
      * @return array
      */
     public function getTabs($userId)
     {
-        return array(
-            'Fortress',
-            'Resources',
-            'Observatory',
-            'Buildings',
-            'Cyberlab',
-            'Neo Training',
-            'Technopub',
-            'Boss Nests',
-            'Commandment',
-            'Neo Bazaar',
-            'Prison',
-            'Terra Chapel'
-        );
+        $tabs = [];
+
+        foreach ($this->tabs as $tabName => $active) {
+            $tabs[] = [
+                'id' => $tabName,
+                'title' => $this->getDisplayName($tabName),
+                'active' => $active
+            ];
+        }
+
+        return $tabs;
     }
 
     /**
@@ -63,7 +66,6 @@ class PlayerInfo
     /**
      * @param int $userId
      * @param int $nodeId
-     * @throws \InvalidArgumentException
      * @return Node
      */
     public function getNode($userId, $nodeId)
@@ -77,5 +79,28 @@ class PlayerInfo
         }
 
         throw new \InvalidArgumentException('Node with id ' . $nodeId . ' doesn\'t exist.');
+    }
+
+    /**
+     * @param int $userId
+     */
+    public function getBuildings($userId)
+    {
+        $player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
+        $fortress = $player->getFortress();
+
+        return $fortress->getBuildings();
+    }
+
+    /**
+     * Gets the displayable name of an identifier, e.g.
+     *  'boss_nests' => 'Boss Nests'
+     *
+     * @param string $name
+     * @return string
+     */
+    private function getDisplayName($name)
+    {
+        return ucwords(strtr($name, '_', ' '));
     }
 }

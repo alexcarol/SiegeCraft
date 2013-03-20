@@ -2,6 +2,7 @@
 
 namespace TS\Bundle\SiegeCraftBundle\DependencyInjection;
 
+use Symfony\Component\Config\Definition\Builder\NodeDefinition;
 use Symfony\Component\Config\Definition\Builder\TreeBuilder;
 use Symfony\Component\Config\Definition\ConfigurationInterface;
 
@@ -18,12 +19,19 @@ class Configuration implements ConfigurationInterface
     public function getConfigTreeBuilder()
     {
         $treeBuilder = new TreeBuilder();
-        $rootNode = $treeBuilder->root('siege_craft');
+        $rootNode = $treeBuilder->root('ts_siege_craft');
 
-        // Here you should define the parameters that are allowed to
-        // configure your bundle. See the documentation linked above for
-        // more information on that topic.
+        $this->addTabs($rootNode);
 
         return $treeBuilder;
+    }
+
+    private function addTabs(NodeDefinition $rootNode) {
+        $rootNode
+            ->children()
+                ->arrayNode('tabs')
+                    ->prototype('boolean')
+                ->end()
+            ->end();
     }
 }

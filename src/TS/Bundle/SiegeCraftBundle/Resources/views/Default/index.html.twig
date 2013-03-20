@@ -22,7 +22,11 @@
         </ul>
         <ul id="menu" class="nav nav-tabs nav-stacked">
         {% for tab in tabs %}
-            <li class="{{ tab|lower }}"><a href="#">{{ tab }}</a></li>
+            <li data-tab="{{ tab.id }}"
+                {% if not tab.active %}
+                    class="disabled"
+                {% endif %}
+                ><a href="#">{{ tab.title }}</a></li>
         {% endfor %}
         </ul>
         <div class="copyright text-center">
