@@ -23,6 +23,7 @@ class AppKernel extends Kernel
             new Braincrafted\BootstrapBundle\BraincraftedBootstrapBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
+            new Devtime\BackboneBundle\DevtimeBackboneBundle(),
             new TS\Bundle\SiegeCraftBundle\TSSiegeCraftBundle(),
             new TS\Bundle\GameConfigBundle\TSGameConfigBundle(),
             new TS\Bundle\UserBundle\TSUserBundle()
