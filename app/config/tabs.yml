@@ -1,0 +1,14 @@
+ts_siege_craft:
+    tabs:
+        fortress:       true
+        resources:      true
+        observatory:    true
+        buildings:      true
+        cyberlab:       false
+        neo_training:   false
+        technopub:      false
+        boss_nests:     false
+        commandment:    false
+        neo_bazaar:     false
+        prison:         false
+        terra_chapel:   false
