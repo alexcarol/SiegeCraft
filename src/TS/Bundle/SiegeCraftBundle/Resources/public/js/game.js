@@ -9,8 +9,8 @@ var main = $('#main'),
 $(document).ready(function () {
     renderSection(currentSection);
 
-    $('li', menu).bind('click', function() {
-        renderSection($(this).attr('class'));
+    $('li:not(.disabled)', menu).bind('click', function() {
+        renderSection($(this).data('tab'));
     });
 });
 
@@ -52,13 +52,13 @@ function renderSection(section) {
             });
             break;
         default:
-            main.append('<div class="text-center">' + section.charAt(0).toUpperCase() + section.slice(1) + '</div>');
+            main.append('<div class="text-center">' + $('[data-tab=' + section + '] a').html() + '</div>');
             break;
     }
 
     // Updating selection on menu
     $('li', menu).removeClass('active');
-    $('.' + section, menu).addClass('active');
+    $('[data-tab=' + section + ']', menu).addClass('active');
 }
 
 function renderFortress(data) {

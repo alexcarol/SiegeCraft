@@ -1,4 +1,5 @@
 @backgroundColor: #f7f7f7;
+@activeTabBackgroundColor: #0088cc;
 @padding: 8px;
 @borderColor: #ddd;
 
@@ -23,6 +24,19 @@ body {
     line-height: 20px;
     padding: @padding (@padding + 4px);
     margin-left: 0;
+}
+
+#menu li.active {
+    pointer-events: none;
+
+    a {
+        color: #fff;
+        background-color: @activeTabBackgroundColor;
+    }
+}
+
+#menu li.disabled {
+    pointer-events: none;
 }
 
 .round-box(@radius: 4px) {
