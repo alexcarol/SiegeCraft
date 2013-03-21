@@ -1,0 +1,7 @@
+parameters:
+    database_driver:   pdo_mysql
+    database_host:     aai3q40t43ngh1.cwclau407eyo.eu-west-1.rds.amazonaws.com
+    database_port:     ~
+    database_name:     AWSEBRDSDatabase
+    database_user:     root
+    database_password: bigotiborg
