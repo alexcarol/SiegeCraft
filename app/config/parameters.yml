@@ -4,7 +4,7 @@ parameters:
     database_port:     ~
     database_name:     SiegeCraft
     database_user:     root
-    database_password: bigoti
+    database_password: bigotiborg
 
     mailer_transport:  smtp
     mailer_host:       127.0.0.1
