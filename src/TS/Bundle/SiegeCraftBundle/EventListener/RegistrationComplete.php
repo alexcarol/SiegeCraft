@@ -9,7 +9,6 @@ use Symfony\Component\EventDispatcher\EventSubscriberInterface;
 use TS\Bundle\SiegeCraftBundle\Entity\Fortress;
 use TS\Bundle\SiegeCraftBundle\Entity\Node;
 use TS\Bundle\SiegeCraftBundle\Entity\Player;
-use TS\Bundle\SiegeCraftBundle\Entity\Region;
 
 class RegistrationComplete implements EventSubscriberInterface {
 
@@ -25,7 +24,6 @@ class RegistrationComplete implements EventSubscriberInterface {
         array(0,-1),
         array(-1,0),
     );
-
 
     public function __construct(EntityManager $em)
     {
