@@ -53,7 +53,7 @@ class PlayerHelper
         $nodes = $this->getNodes($player);
 
         foreach ($nodes as $node) {
-            if ($node->id == $nodeId) {
+            if ($node->id === $nodeId) {
                 return $node;
             }
         }
