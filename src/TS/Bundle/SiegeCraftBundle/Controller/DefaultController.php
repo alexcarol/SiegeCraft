@@ -18,7 +18,7 @@ class DefaultController extends Controller
     {
         $userId = $this->getUser()->getId();
         $tabs = $this->container->get('siege_craft.service.player_info')->getTabs($userId);
-        $resources = $this->container->get('siege_craft.service.player_info')->getResources($userId);
+        $resources = $this->getUser()->getPlayer()->getResources();
         $data = array();
         $buildings = array();
         $technologies = array();
