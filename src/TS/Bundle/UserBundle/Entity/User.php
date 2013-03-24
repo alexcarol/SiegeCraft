@@ -19,7 +19,7 @@ class User extends BaseUser {
     protected $id;
 
     /**
-     * @ORM\OneToOne(targetEntity="\TS\Bundle\SiegeCraftBundle\Entity\Player", mappedBy="user")
+     * @ORM\OneToOne(targetEntity="\TS\Bundle\SiegeCraftBundle\Entity\Player", mappedBy="user", fetch="EAGER")
      * @var Player
      */
     private $player;

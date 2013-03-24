@@ -14,7 +14,7 @@ class PlayerInfo
 
     private $tabs;
 
-    public function __construct(EntityManager $em, $tabs)
+    public function __construct(EntityManager $em, array $tabs)
     {
         $this->em = $em;
         $this->tabs = $tabs;
@@ -38,17 +38,6 @@ class PlayerInfo
         }
 
         return $tabs;
-    }
-
-    /**
-     * @param int $userId
-     * @return mixed
-     */
-    public function getResources($userId)
-    {
-        $player = $this->em->getRepository('TSSiegeCraftBundle:Player')->findOneByUser($userId);
-
-        return $player->getResources();
     }
 
     /**
