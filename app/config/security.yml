@@ -13,17 +13,15 @@ security:
     providers:
          fos_userbundle:
                 id: fos_user.user_provider.username
-         in_memory:
-            memory:
-                users:
-                    user:  { password: userpass, roles: [ 'ROLE_USER' ] }
-                    admin: { password: adminpass, roles: [ 'ROLE_ADMIN' ] }
 
     firewalls:
         main:
             pattern: ^/
             form_login:
+                login_path: fos_user_security_login
                 always_use_default_target_path: true
+                default_target_path: game_index
+#                use_referer: true
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
             logout:       true
@@ -33,9 +31,9 @@ security:
             security: false
 
     access_control:
-            - { path: ^/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/\w+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/_(wdt|profiler), role: IS_AUTHENTICATED_ANONYMOUSLY }
-            - { path: ^/\d\d/admin/, role: ROLE_ADMIN }
+            - { path: ^/admin/, role: ROLE_ADMIN }
             - { path: ^/, role: ROLE_USER }

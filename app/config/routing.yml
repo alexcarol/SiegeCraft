@@ -5,7 +5,7 @@ ts_user:
 game_config:
     resource: "@TSGameConfigBundle/Controller/"
     type:     annotation
-    prefix:   /{_locale}/admin/config/
+    prefix:   /admin/config/
 
 siege_craft:
     resource: "@TSSiegeCraftBundle/Controller/"
