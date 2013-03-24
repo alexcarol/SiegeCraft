@@ -19,12 +19,15 @@ security:
             pattern: ^/
             form_login:
                 login_path: fos_user_security_login
+                check_path: fos_user_security_check
 #                always_use_default_target_path: true
                 default_target_path: game_index
 #                use_referer: true
                 provider: fos_userbundle
                 csrf_provider: form.csrf_provider
-            logout:       true
+            logout:
+                path: fos_user_security_logout
+                target: game_index
             anonymous:    true
         dev:
             pattern:  ^/(_(profiler|wdt)|css|images|js)/
@@ -32,8 +35,8 @@ security:
 
     access_control:
             - { path: ^/\w+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
-            - { path: ^/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
-            - { path: ^/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/\w+/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
+            - { path: ^/\w+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/_(wdt|profiler), role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/admin/, role: ROLE_ADMIN }
             - { path: ^/, role: ROLE_USER }

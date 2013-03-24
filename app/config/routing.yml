@@ -1,6 +1,6 @@
 ts_user:
     resource: "@TSUserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
 
 game_config:
     resource: "@TSGameConfigBundle/Controller/"
