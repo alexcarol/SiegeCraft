@@ -5,6 +5,8 @@
     xsi:schemaLocation="http://symfony.com/schema/dic/services http://symfony.com/schema/dic/services/services-1.0.xsd">
 
     <parameters>
+        <parameter key="security.exception_listener.class">TS\Bundle\SiegeCraftBundle\Security\Firewall\ExceptionListener</parameter>
+
         <parameter key="siege_craft.service.player_helper.class">TS\Bundle\SiegeCraftBundle\Service\PlayerHelper</parameter>
         <parameter key="siege_craft.listener.registration_complete.class">TS\Bundle\SiegeCraftBundle\EventListener\RegistrationComplete</parameter>
     </parameters>

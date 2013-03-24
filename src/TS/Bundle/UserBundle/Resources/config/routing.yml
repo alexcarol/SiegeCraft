@@ -17,11 +17,6 @@ fos_user_change_password:
     resource: "@FOSUserBundle/Resources/config/routing/change_password.xml"
     prefix: /profile
 
-#
-#    <route id="fos_user_security_login" pattern="/login">
-#        <default key="_controller">FOSUserBundle:Security:login</default>
-#    </route>
-
 fos_user_security_login:
     path: /{_locale}/login
     defaults:  { _controller: FOSUserBundle:Security:login }

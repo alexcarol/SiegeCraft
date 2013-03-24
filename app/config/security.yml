@@ -19,7 +19,7 @@ security:
             pattern: ^/
             form_login:
                 login_path: fos_user_security_login
-                always_use_default_target_path: true
+#                always_use_default_target_path: true
                 default_target_path: game_index
 #                use_referer: true
                 provider: fos_userbundle
