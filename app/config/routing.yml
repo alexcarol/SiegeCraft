@@ -10,11 +10,11 @@ game_config:
 siege_craft:
     resource: "@TSSiegeCraftBundle/Controller/"
     type:     annotation
-    prefix:   /{_locale}
-
-root:
-    pattern: /
-    defaults:
-        _controller: FrameworkBundle:Redirect:urlRedirect
-        path: /%locale%
-        permanent: true
+#    prefix:   /{_locale}
+#
+#root:
+#    pattern: /
+#    defaults:
+#        _controller: FrameworkBundle:Redirect:urlRedirect
+#        path: /%locale%
+#        permanent: true

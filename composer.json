@@ -37,7 +37,9 @@
         "jquery/jquery": "1.9.*",
         "leafo/lessphp": "dev-master",
         "doctrine/doctrine-fixtures-bundle": "dev-master",
-        "stof/doctrine-extensions-bundle": "dev-master"
+        "stof/doctrine-extensions-bundle": "dev-master",
+        "jms/i18n-routing-bundle": "dev-master",
+        "jms/translation-bundle": "1.1.*@dev"
     },
     "require-dev":{
         "phpunit/phpunit":"~3.7.12",
