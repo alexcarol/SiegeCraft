@@ -3,3 +3,16 @@ siegecraft:
 
 messages:
     to_game: Return to the game.
+tabs:
+    fortress:       Fortress
+    resources:      Resources
+    observatory:    Observatory
+    buildings:      Buildings
+    cyberlab:       Cyberlab
+    neo_training:   Neo Training
+    technopub:      Techno Pub
+    boss_nests:     Boss Nests
+    commandment:    Commandment
+    neo_bazaar:     Neo Bazaar
+    prison:         Prison
+    terra_chapel:   Terra Chapel
