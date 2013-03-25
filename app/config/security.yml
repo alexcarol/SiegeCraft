@@ -34,6 +34,7 @@ security:
             security: false
 
     access_control:
+            - { path: ^/\w+/bigoti$, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/\w+/login$, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/\w+/register, role: IS_AUTHENTICATED_ANONYMOUSLY }
             - { path: ^/\w+/resetting, role: IS_AUTHENTICATED_ANONYMOUSLY }

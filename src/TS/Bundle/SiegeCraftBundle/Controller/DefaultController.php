@@ -7,6 +7,7 @@ use Sensio\Bundle\FrameworkExtraBundle\Configuration\Route;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Method;
 use Sensio\Bundle\FrameworkExtraBundle\Configuration\Template;
 use Symfony\Component\HttpFoundation\JsonResponse;
+use Symfony\Component\HttpFoundation\Response;
 
 class DefaultController extends Controller
 {
@@ -130,5 +131,14 @@ class DefaultController extends Controller
         return array(
             'information' => $information
         );
+    }
+
+    /**
+     * @Route("/bigoti")
+     * @Template()
+     */
+    public function bigotiAction()
+    {
+        return array();
     }
 }
