@@ -2,6 +2,7 @@
 
 namespace TS\Bundle\SiegeCraftBundle\Service;
 
+use Symfony\Bundle\FrameworkBundle\Translation\Translator;
 use TS\Bundle\SiegeCraftBundle\Entity\Player;
 use TS\Bundle\SiegeCraftBundle\Entity\Node;
 
@@ -9,9 +10,15 @@ class PlayerHelper
 {
     private $tabs;
 
-    public function __construct(array $tabs)
+    /**
+     * @var \Symfony\Bundle\FrameworkBundle\Translation\Translator
+     */
+    private $translator;
+
+    public function __construct(array $tabs, Translator $translator)
     {
         $this->tabs = $tabs;
+        $this->translator = $translator;
     }
 
     /**
@@ -25,7 +32,7 @@ class PlayerHelper
         foreach ($this->tabs as $tabName => $active) {
             $tabs[] = [
                 'id' => $tabName,
-                'title' => $this->getDisplayName($tabName),
+                'title' => $this->translator->trans('tabs.' . $tabName, array(), 'TSSiegeCraftBundle'),
                 'active' => $active
             ];
         }
@@ -68,17 +75,5 @@ class PlayerHelper
     public function getBuildings(Player $player)
     {
         return $player->getFortress()->getBuildings();
-    }
-
-    /**
-     * Gets the displayable name of an identifier, e.g.
-     *  'boss_nests' => 'Boss Nests'
-     *
-     * @param string $name
-     * @return string
-     */
-    private function getDisplayName($name)
-    {
-        return ucwords(strtr($name, '_', ' '));
     }
 }

@@ -12,6 +12,7 @@
     <services>
         <service id="siege_craft.service.player_helper" class="%siege_craft.service.player_helper.class%">
             <argument>%ts_siege_craft.tabs%</argument>
+            <argument type="service" id="translator" />
         </service>
         <service id="siege_craft.listener.registration_complete" class="%siege_craft.listener.registration_complete.class%" >
             <argument type="service" id="doctrine.orm.entity_manager" />
