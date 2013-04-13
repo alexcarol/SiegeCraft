@@ -20,7 +20,7 @@ class AppKernel extends Kernel
             new JMS\DiExtraBundle\JMSDiExtraBundle($this),
             new JMS\SecurityExtraBundle\JMSSecurityExtraBundle(),
             new FOS\UserBundle\FOSUserBundle(),
-            new Braincrafted\BootstrapBundle\BraincraftedBootstrapBundle(),
+            new Bc\Bundle\BootstrapBundle\BcBootstrapBundle(),
             new Doctrine\Bundle\FixturesBundle\DoctrineFixturesBundle(),
             new Stof\DoctrineExtensionsBundle\StofDoctrineExtensionsBundle(),
             new TS\Bundle\SiegeCraftBundle\TSSiegeCraftBundle(),
