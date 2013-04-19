@@ -1,6 +1,6 @@
 ts_user:
     resource: "@TSUserBundle/Resources/config/routing.yml"
-    prefix:   /
+    prefix:   /{_locale}
 
 game_config:
     resource: "@TSGameConfigBundle/Controller/"
@@ -10,4 +10,11 @@ game_config:
 siege_craft:
     resource: "@TSSiegeCraftBundle/Controller/"
     type:     annotation
-    prefix:   /
+    prefix:   /{_locale}
+
+root:
+    pattern: /
+    defaults:
+        _controller: FrameworkBundle:Redirect:urlRedirect
+        path: /%locale%
+        permanent: true

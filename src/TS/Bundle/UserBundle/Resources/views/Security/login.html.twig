@@ -16,7 +16,7 @@
                 {{ 'layout.logout'|trans({}, 'FOSUserBundle') }}
             </a>
             <p>
-                <a href="{{ path('ts_siegecraft_default_index') }}">{{ 'messages.to_game'|trans({}, 'TSSiegeCraftBundle') }}</a>
+                <a href="{{ path('game_index') }}">{{ 'messages.to_game'|trans({}, 'TSSiegeCraftBundle') }}</a>
             </p>
         {% else %}
             {% if error %}
@@ -49,6 +49,7 @@
                                     <input type="checkbox" id="remember_me" name="_remember_me" value="on" />
                                     {{ 'security.login.remember_me'|trans({}, 'FOSUserBundle') }}
                                 </label>
+                                <input type="hidden" name="_target_path" value="{{ app.session.get('_security.target_path') }}" />
                                 <button type="submit" class="btn" id="_submit" name="_submit">{{ 'security.login.submit'|trans({}, 'FOSUserBundle') }}</button>
                             </div>
                         </div>

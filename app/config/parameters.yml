@@ -12,4 +12,5 @@ parameters:
     mailer_password:   ~
 
     locale:            en
+#    supported_locales: [en,es,ca,fr]
     secret:            d3447b2a10d5aac75a46c5e10db28dd74c
